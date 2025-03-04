@@ -2,7 +2,8 @@
 
 body {
     background: linear-gradient(180deg, #0a0f29, #000000);
-    color: #ffffff; /* Mantém o texto legível */
+    color: #ffffff;
+    /* Mantém o texto legível */
 }
 
 /*body {
@@ -11,19 +12,26 @@ body {
 }*/
 
 p {
-    color: #8AB4F8; /* Azul claro */
-    font-family: 'Poppins', sans-serif; /* Fonte moderna e legível */
-    font-size: 1.2rem; /* Tamanho levemente maior para destaque */
-    font-weight: 500; /* Peso intermediário para melhor leitura */
-    line-height: 1.6; /* Espaçamento entre linhas confortável */
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6); /* Efeito neon suave */
+    color: #8AB4F8;
+    /* Azul claro */
+    font-family: 'Poppins', sans-serif;
+    /* Fonte moderna e legível */
+    font-size: 1.2rem;
+    /* Tamanho levemente maior para destaque */
+    font-weight: 500;
+    /* Peso intermediário para melhor leitura */
+    line-height: 1.6;
+    /* Espaçamento entre linhas confortável */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+    /* Efeito neon suave */
 }
 
 /* Ajuste do botão de troca de tema na navbar */
 .theme-toggle {
     display: flex;
     align-items: center;
-    margin-left: 20px; /* Espaçamento em relação aos links */
+    margin-left: 20px;
+    /* Espaçamento em relação aos links */
 }
 
 .theme-toggle button {
@@ -54,7 +62,9 @@ p {
 }
 
 /* Estilização para os títulos principais */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Orbitron', sans-serif;
     color: #00d9ff;
     text-shadow: 0 0 10px #00d9ff, 0 0 20px #005f73;
@@ -87,7 +97,8 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1001; /* Garantindo que fique acima do botão de voltar ao topo */
+    z-index: 1001;
+    /* Garantindo que fique acima do botão de voltar ao topo */
 }
 
 .whatsapp-icon {
@@ -125,7 +136,8 @@ h1, h2, h3 {
 /* Estilo para o carrossel */
 #carouselSobre {
     max-width: 700px;
-    margin: 20px auto; /* Centraliza o carrossel */
+    margin: 20px auto;
+    /* Centraliza o carrossel */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
@@ -164,6 +176,7 @@ h1, h2, h3 {
     color: #fff;
     text-shadow: 0 0 5px #00d9ff, 0 0 10px #005f73;
 }
+
 .contact-section {
     background: linear-gradient(135deg, #001f3f, #004080);
     padding: 40px 0;
@@ -173,17 +186,18 @@ h1, h2, h3 {
 @font-face {
     font-family: "Bootstrap Icons";
     src: url("/fonts/bootstrap-icons.woff2") format("woff2"),
-         url("/fonts/bootstrap-icons.woff") format("woff");
+        url("/fonts/bootstrap-icons.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-  }
-  
+}
+
 .social-icons a {
     margin: 0 15px;
     color: #fff;
     font-size: 20px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
+
 .social-icons a:hover {
     transform: scale(1.3);
     color: #004080;
@@ -191,23 +205,30 @@ h1, h2, h3 {
 
 /* Tema Claro */
 .light-theme {
-    background-color: #f8f9fa; /* Cor clara */
-    color: #000; /* Texto escuro */
+    background-color: #f8f9fa;
+    /* Cor clara */
+    color: #000;
+    /* Texto escuro */
 }
 
 /* Tema Escuro (padrão) */
 body {
-    background-color: #0a0a0a; /* Cor escura */
-    color: #fff; /* Texto claro */
-    transition: background-color 0.5s, color 0.5s; /* Animação suave */
+    background-color: #0a0a0a;
+    /* Cor escura */
+    color: #fff;
+    /* Texto claro */
+    transition: background-color 0.5s, color 0.5s;
+    /* Animação suave */
 }
 
 /* Estilizando a seção de vídeos */
-#videos, #carrossel-videos {
+#videos,
+#carrossel-videos {
     text-align: center;
 }
 
-#videos .ratio, #carrossel-videos .ratio {
+#videos .ratio,
+#carrossel-videos .ratio {
     border-radius: 12px;
 }
 
@@ -219,18 +240,22 @@ body {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    #videos .ratio, #carrossel-videos .ratio {
+
+    #videos .ratio,
+    #carrossel-videos .ratio {
         width: 100%;
     }
 }
 
 /* Seção de Música (Spotify) */
 #musica {
-    margin-top: 40px; /* Espaçamento entre as seções */
+    margin-top: 40px;
+    /* Espaçamento entre as seções */
 }
 
 #musica iframe {
-    max-width: 800px; /* Aumenta o tamanho máximo do player */
+    max-width: 800px;
+    /* Aumenta o tamanho máximo do player */
     width: 100%;
     border-radius: 12px;
 }
@@ -250,4 +275,13 @@ body {
     #videos {
         grid-template-columns: 1fr;
     }
+}
+
+.timeline {
+    border-left: 4px solid #00bcd4;
+    padding-left: 20px;
+}
+
+.event {
+    margin-bottom: 20px;
 }

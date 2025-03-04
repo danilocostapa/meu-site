@@ -30,3 +30,38 @@ $(document).ready(function() {
         toggleThemeBtn.addEventListener('click', toggleTheme);
     });
 
+
+
+    const curiosidades = [
+        "O primeiro computador pesava mais de 27 toneladas.",
+        "Você sabia que o Google foi originalmente chamado de 'Backrub'?",
+        "O primeiro e-mail foi enviado em 1971.",
+        "Programadores passam 70% do tempo depurando código."
+    ];
+
+    function exibirCuriosidade() {
+        const random = Math.floor(Math.random() * curiosidades.length);
+        document.getElementById('curiosidade').textContent = curiosidades[random];
+    }
+
+    // Atualiza a cada 5 segundos
+    setInterval(exibirCuriosidade, 9000);
+    exibirCuriosidade();
+
+
+
+    function animateValue(id, start, end, duration) {
+        let obj = document.getElementById(id);
+        let startTime = null;
+        function animation(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            obj.innerText = Math.floor(progress * (end - start) + start);
+            if (progress < 1) requestAnimationFrame(animation);
+        }
+        requestAnimationFrame(animation);
+    }
+    animateValue("projetos", 0, 50, 3000);
+    animateValue("clientes", 0, 150, 3000);
+    animateValue("anos", 0, 5, 3000);
+
