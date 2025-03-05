@@ -7,6 +7,39 @@ $(document).ready(function () {
 });
 
 
+// Mostrar/esconder botão de rolar para o topo quando chegar no final da página
+window.addEventListener("scroll", function () {
+    const btnTopo = document.getElementById("btn-topo");
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+        btnTopo.style.display = "block";
+    } else {
+        btnTopo.style.display = "none";
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+
+/*Botão para alternar tema */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleThemeBtn = document.getElementById('toggleTheme');
+
+    function toggleTheme() {
+        document.body.classList.toggle('light-theme');
+        console.log('Tema alternado!');
+        const isLightTheme = document.body.classList.contains('light-theme');
+        localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+    }
+
+    toggleThemeBtn.addEventListener('click', toggleTheme);
+});
 
 // Aguarda o DOM carregar para garantir que os elementos existem
 document.addEventListener('DOMContentLoaded', () => {
