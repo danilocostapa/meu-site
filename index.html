@@ -35,13 +35,26 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                     <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#musica">Musicas</a></li>
 
                     <!--<div class="theme-toggle">
                         <button id="toggleTheme">Alternar Tema</button>
                     </div> -->
+
+                    <!-- Submenu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="explorarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Explorar
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="explorarDropdown">
+                            <li><a class="dropdown-item" href="#curiosidades">Curiosidades</a></li>
+                            <li><a class="dropdown-item" href="#jornada-conquistas">Jornada</a></li>
+                            <li><a class="dropdown-item" href="#contato">Contato</a></li>
+                            <li><a class="dropdown-item" href="#outros">Outros</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -82,7 +95,8 @@
 
     </section>
 
-    <section id="jornada-conquistas" class="container-fluid py-5" style="background: linear-gradient(135deg, #0a0f2c, #1a2a6c); color: #fff; border-radius: 20px;">
+    <section id="jornada-conquistas" class="container-fluid py-5"
+        style="background: linear-gradient(135deg, #0a0f2c, #1a2a6c); color: #fff; border-radius: 20px;">
         <div class="container text-center">
             <!-- Minha Jornada -->
             <h2 class="title-text mb-5">Minha Jornada</h2>
@@ -96,7 +110,7 @@
                     <p>Expandi meus serviços para suporte técnico especializado.</p>
                 </div>
             </div>
-    
+
             <!-- Minhas Conquistas -->
             <h2 class="title-text mt-5 mb-4">Minhas Conquistas</h2>
             <div class="row justify-content-center">
@@ -241,16 +255,22 @@
 
 
     <!-- Seção Contato -->
-    <section id="contato" class="container text-center my-5">
-        <h2 class="title-text">Contato</h2>
-        <p>Entre em contato para mais informações sobre meus serviços.</p>
+    <section id="contato" class="container text-center my-5 contato-section">
+        <h2 class="title-text">Entre em Contato</h2>
+        <p>Quer saber mais? Fale comigo pelas minhas redes ou no WhatsApp!</p>
 
-        <div class="social-icons">
+        <!-- Botão para WhatsApp -->
+        <a href="https://wa.me/5591984645543?text=Oi%20Estou%20Vindo%20do%20seu%20site!" target="_blank"
+            class="btn-whatsapp">
+            Fale no WhatsApp
+        </a>
+
+        <!-- Ícones de Redes Sociais -->
+        <div class="social-icons mt-4">
             <a href="https://www.youtube.com/@danilo_bassplayer" target="_blank" title="YouTube">
                 <i class="bi bi-youtube"></i>
             </a>
-            <a href="https://www.instagram.com/danilocosta_pa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank" title="Instagram">
+            <a href="https://www.instagram.com/danilocosta_pa" target="_blank" title="Instagram">
                 <i class="bi bi-instagram"></i>
             </a>
             <a href="https://facebook.com/danilo.costa.355744" target="_blank" title="Facebook">
@@ -259,7 +279,7 @@
             <a href="https://www.linkedin.com/in/danilo-costa-9b3789235/" target="_blank" title="LinkedIn">
                 <i class="bi bi-linkedin"></i>
             </a>
-            <a href="https://github.com/danilocostapa" target="_blank" title="LinkedIn">
+            <a href="https://github.com/danilocostapa" target="_blank" title="GitHub">
                 <i class="bi bi-github"></i>
             </a>
         </div>
@@ -275,9 +295,34 @@
         <img src="resources/icons/892692.png" alt="Voltar ao topo" class="top-icon">
     </button>
 
-    <!-- Rodapé -->
-    <footer class="bg-dark text-light text-center p-3 mt-5">
-        <p>&copy; 2025 Danilo Costa. Todos os direitos reservados.</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Seção de Links Rápidos -->
+            <div class="footer-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+                <a href="https://wa.me/5591984645543" target="_blank">WhatsApp</a>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div class="footer-contact">
+                <p>📧 contato@seudominio.com</p>
+                <p>📍 Ulianópolis - PA</p>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@danilo_bassplayer" target="_blank">YouTube</a>
+                <a href="https://www.instagram.com/danilocosta_pa" target="_blank">Instagram</a>
+                <a href="https://facebook.com/danilo.costa.355744" target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com/in/danilo-costa-9b3789235/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/danilocostapa" target="_blank">GitHub</a>
+            </div>
+
+            <!-- Direitos Reservados -->
+            <p class="footer-copy">&copy; Desenvolvido por Danilo Costa - 2025 - Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script>
