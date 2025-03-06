@@ -31,9 +31,10 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/script-noticias.js"></script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9774711282295138"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -267,6 +268,35 @@
         <p id="curiosidade">Carregando uma curiosidade interessante...</p>
     </section>
 
+    <!-- Botão para abrir o modal -->
+    <button id="openNewsBtn" class="btn btn-primary">Ver Notícias</button>
+
+    <!-- Modal de Notícias -->
+    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newsModalLabel">Últimas Notícias</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Seletor de Categoria -->
+                    <select id="newsCategory" class="form-select mb-3">
+                        <option value="general">Geral</option>
+                        <option value="technology">Tecnologia</option>
+                        <option value="science">Ciência</option>
+                        <option value="sports">Esportes</option>
+                        <option value="entertainment">Entretenimento</option>
+                        <option value="health">Saúde</option>
+                        <option value="business">Negócios</option>
+                    </select>
+
+                    <!-- Área onde as notícias serão exibidas -->
+                    <div id="newsContent">Carregando notícias...</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Seção Contato -->
