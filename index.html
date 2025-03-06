@@ -68,6 +68,7 @@
                             <li><a class="dropdown-item" href="#curiosidades">Curiosidades</a></li>
                             <li><a class="dropdown-item" href="#jornada-conquistas">Jornada</a></li>
                             <li><a class="dropdown-item" href="#contato">Contato</a></li>
+                            <li><a class="dropdown-item" href="#noticias">Notícias</a></li>
                             <li><a class="dropdown-item" href="#outros">Outros</a></li>
                         </ul>
                     </li>
@@ -268,107 +269,117 @@
         <p id="curiosidade">Carregando uma curiosidade interessante...</p>
     </section>
 
-    <!-- Botão para abrir o modal -->
-    <button id="openNewsBtn" class="btn btn-primary">Ver Notícias</button>
+    <div class="container mt-5 text-center" id="noticias">
+        <h2 class="title-text">Últimas Notícias</h2>
 
-    <!-- Modal de Notícias -->
-    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="newsModalLabel">Últimas Notícias</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Seletor de Categoria -->
-                    <select id="newsCategory" class="form-select mb-3">
-                        <option value="general">Geral</option>
-                        <option value="technology">Tecnologia</option>
-                        <option value="science">Ciência</option>
-                        <option value="sports">Esportes</option>
-                        <option value="entertainment">Entretenimento</option>
-                        <option value="health">Saúde</option>
-                        <option value="business">Negócios</option>
-                    </select>
+        <!-- Botão para abrir o modal -->
+        <button id="openNewsBtn" class="btn btn-primary mt-3">Ver Notícias</button>
 
-                    <!-- Área onde as notícias serão exibidas -->
-                    <div id="newsContent">Carregando notícias...</div>
+        <!-- Modal de Notícias -->
+        <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newsModalLabel">Notícias em Destaque</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- Seletor de Categoria -->
+                        <label for="newsCategory" class="form-label">Escolha a categoria:</label>
+                        <select id="newsCategory" class="form-select mb-3">
+                            <option value="general">Geral</option>
+                            <option value="world">Mundo</option>
+                            <option value="nation">Nacional</option>
+                            <option value="business">Negócios</option>
+                            <option value="technology">Tecnologia</option>
+                            <option value="entertainment">Entretenimento</option>
+                            <option value="sports">Esportes</option>
+                            <option value="science">Ciência</option>
+                            <option value="health">Saúde</option>
+                        </select>
+
+                        <!-- Área para Exibir Notícias -->
+                        <div id="newsContent">Carregando notícias...</div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- Seção Contato -->
+        <section id="contato" class="container text-center my-5 contato-section">
+            <h2 class="title-text">Entre em Contato</h2>
+            <p>Quer saber mais? Fale comigo pelas minhas redes ou no WhatsApp!</p>
 
-    <!-- Seção Contato -->
-    <section id="contato" class="container text-center my-5 contato-section">
-        <h2 class="title-text">Entre em Contato</h2>
-        <p>Quer saber mais? Fale comigo pelas minhas redes ou no WhatsApp!</p>
+            <!-- Botão para WhatsApp -->
+            <a href="https://wa.me/5591984645543?text=Oi%20Estou%20Vindo%20do%20seu%20site!" target="_blank"
+                class="btn-whatsapp">
+                Fale no WhatsApp
+            </a>
 
-        <!-- Botão para WhatsApp -->
-        <a href="https://wa.me/5591984645543?text=Oi%20Estou%20Vindo%20do%20seu%20site!" target="_blank"
-            class="btn-whatsapp">
-            Fale no WhatsApp
+            <!-- Ícones de Redes Sociais -->
+            <div class="social-icons mt-4">
+                <a href="https://www.youtube.com/@danilo_bassplayer" target="_blank" title="YouTube">
+                    <i class="bi bi-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/danilocosta_pa" target="_blank" title="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://facebook.com/danilo.costa.355744" target="_blank" title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/danilo-costa-9b3789235/" target="_blank" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://github.com/danilocostapa" target="_blank" title="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Botão Flutuante do WhatsApp -->
+        <a href="https://wa.me/+5591984645543?text=Preciso%20de%20informações." class="whatsapp-btn" target="_blank">
+            <img src="resources/icons/220236.png" alt="WhatsApp" class="whatsapp-icon">
         </a>
 
-        <!-- Ícones de Redes Sociais -->
-        <div class="social-icons mt-4">
-            <a href="https://www.youtube.com/@danilo_bassplayer" target="_blank" title="YouTube">
-                <i class="bi bi-youtube"></i>
-            </a>
-            <a href="https://www.instagram.com/danilocosta_pa" target="_blank" title="Instagram">
-                <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://facebook.com/danilo.costa.355744" target="_blank" title="Facebook">
-                <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/danilo-costa-9b3789235/" target="_blank" title="LinkedIn">
-                <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="https://github.com/danilocostapa" target="_blank" title="GitHub">
-                <i class="bi bi-github"></i>
-            </a>
-        </div>
-    </section>
+        <!-- Botão para subir ao topo -->
+        <button id="btn-topo" class="btn-topo" onclick="scrollToTop()">
+            <img src="resources/icons/892692.png" alt="Voltar ao topo" class="top-icon">
+        </button>
 
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/+5591984645543?text=Preciso%20de%20informações." class="whatsapp-btn" target="_blank">
-        <img src="resources/icons/220236.png" alt="WhatsApp" class="whatsapp-icon">
-    </a>
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Seção de Links Rápidos -->
+                <div class="footer-links">
+                    <a href="#sobre">Sobre</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#contato">Contato</a>
+                    <a href="https://wa.me/5591984645543" target="_blank">WhatsApp</a>
+                </div>
 
-    <!-- Botão para subir ao topo -->
-    <button id="btn-topo" class="btn-topo" onclick="scrollToTop()">
-        <img src="resources/icons/892692.png" alt="Voltar ao topo" class="top-icon">
-    </button>
+                <!-- Informações de Contato -->
+                <div class="footer-contact">
+                    <!--<p>📧 contato@seudominio.com</p>-->
+                    <p>📍 Ulianópolis - PA</p>
+                </div>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Seção de Links Rápidos -->
-            <div class="footer-links">
-                <a href="#sobre">Sobre</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#contato">Contato</a>
-                <a href="https://wa.me/5591984645543" target="_blank">WhatsApp</a>
+                <!-- Redes Sociais -->
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@danilo_bassplayer" target="_blank">YouTube</a>
+                    <a href="https://www.instagram.com/danilocosta_pa" target="_blank">Instagram</a>
+                    <a href="https://facebook.com/danilo.costa.355744" target="_blank">Facebook</a>
+                    <a href="https://www.linkedin.com/in/danilo-costa-9b3789235/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/danilocostapa" target="_blank">GitHub</a>
+                </div>
+
+                <!-- Direitos Reservados -->
+                <p class="footer-copy">&copy; Desenvolvido por Danilo Costa - 2025 - Todos os direitos reservados.</p>
             </div>
-
-            <!-- Informações de Contato -->
-            <div class="footer-contact">
-                <!--<p>📧 contato@seudominio.com</p>-->
-                <p>📍 Ulianópolis - PA</p>
-            </div>
-
-            <!-- Redes Sociais -->
-            <div class="footer-social">
-                <a href="https://www.youtube.com/@danilo_bassplayer" target="_blank">YouTube</a>
-                <a href="https://www.instagram.com/danilocosta_pa" target="_blank">Instagram</a>
-                <a href="https://facebook.com/danilo.costa.355744" target="_blank">Facebook</a>
-                <a href="https://www.linkedin.com/in/danilo-costa-9b3789235/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/danilocostapa" target="_blank">GitHub</a>
-            </div>
-
-            <!-- Direitos Reservados -->
-            <p class="footer-copy">&copy; Desenvolvido por Danilo Costa - 2025 - Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        </footer>
 
 </body>
 
