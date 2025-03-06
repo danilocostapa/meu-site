@@ -381,6 +381,28 @@
             </div>
         </footer>
 
+        <!-- Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+
+        <script>
+            // Sua configuração do Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyBZMcTEACAF5aUh0ZtuO9YdWP_WbMD9_M0",
+                authDomain: "meu-site-76edf.firebaseapp.com",
+                projectId: "meu-site-76edf",
+                storageBucket: "meu-site-76edf.firebasestorage.app",
+                messagingSenderId: "496793480138",
+                appId: "1:496793480138:web:996241072c7804fc6afd33",
+                measurementId: "G-951PD672DG"
+            };
+
+            // Inicializa o Firebase
+            const app = firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
+        </script>
+
+
 </body>
 
 </html>
