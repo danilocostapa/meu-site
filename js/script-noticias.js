@@ -9,28 +9,31 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchNews(category = 'general') {
         if (!newsContent) return;
 
-        newsContent.innerHTML = 'Carregando notícias...';
+        newsContent.innerHTML = '<p>🔎 Carregando notícias...</p>';
         try {
             const response = await fetch(`https://gnews.io/api/v4/top-headlines?lang=pt&category=${category}&apikey=${apiKey}`);
+            if (!response.ok) throw new Error('Falha na resposta da API');
+            
             const data = await response.json();
 
             if (!data.articles || data.articles.length === 0) {
-                newsContent.innerHTML = '<p>Nenhuma notícia encontrada.</p>';
+                newsContent.innerHTML = '<p>❌ Nenhuma notícia encontrada.</p>';
                 return;
             }
 
             // Renderizar as notícias no modal
             newsContent.innerHTML = data.articles.map(article => `
-                <div class="mb-3">
+                <div class="mb-4">
                     <h5>${article.title}</h5>
-                    <p>${article.description || 'Sem descrição disponível.'}</p>
-                    <a href="${article.url}" target="_blank" class="btn btn-sm btn-primary">Ler mais</a>
+                    ${article.image ? `<img src="${article.image}" alt="Imagem da notícia" class="img-fluid mb-2">` : ''}
+                    <p>${article.description || '📌 Sem descrição disponível.'}</p>
+                    <a href="${article.url}" target="_blank" class="btn btn-sm btn-primary">📰 Ler mais</a>
                     <hr>
                 </div>
             `).join('');
         } catch (error) {
             console.error('Erro ao buscar notícias:', error);
-            newsContent.innerHTML = '<p>Erro ao carregar notícias. Tente novamente mais tarde.</p>';
+            newsContent.innerHTML = '<p>⚠️ Erro ao carregar notícias. Tente novamente mais tarde.</p>';
         }
     }
 
