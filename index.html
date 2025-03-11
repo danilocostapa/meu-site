@@ -17,25 +17,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danilo Costa - Tecnologia e TI</title>
     <meta name="author" content="Danilo Costa">
-    <meta name="description" content="Site, blog pessoal de Danilo Costa">
+    <meta name="description"
+        content="Explore serviços de TI com Danilo Costa. Manutenção de computadores, redes, consultoria em tecnologia e desenvolvimento web em Ulianópolis - PA.">
     <meta name="keywords" content="sites, web, desenvolvimento, Ulianópolis, pará, Danilo Costa">
     <meta http-equiv="content-language" content="pt-br, en-US, fr" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="copyright" content="© 2025 DaniloCosta" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta property="og:title" content="Danilo Costa - Tecnologia e TI">
     <meta property="og:description" content="Especialista em TI, manutenção de computadores e desenvolvimento web.">
     <meta property="og:image" content="resources/logo/2.png">
     <meta property="og:url" content="https://danilocostapa.github.io/meu-site/">
     <meta name="twitter:card" content="summary_large_image">
 
-
-
     <link rel="shortcut icon" href="resources/logo/2.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="fonts/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/modal-avaliacoes.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+
 
 
 
@@ -49,7 +51,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand logo-text" href="#home">Danilo Costa</a>
-            <button class="navbar-toggler" aria-label="Abrir menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" aria-label="Abrir menu" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -67,7 +70,7 @@
                     <!-- Submenu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="explorarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-expanded="false" aria-haspopup="true">
                             Explorar
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="explorarDropdown">
@@ -93,7 +96,8 @@
     <section id="sobre" class="container text-center my-5">
         <h2 class="title-text">Sobre Mim</h2>
         <p>Sou um profissional apaixonado por tecnologia, com anos de experiência em TI, manutenção de computadores,
-            redes e desenvolvimento de software.</p>
+            redes e desenvolvimento de software. Trabalhando atualmente no Hospital São Francisco em Ulianópolis - PA
+        </p>
 
         <!-- Carrossel de Imagens - Sobre Mim -->
         <div id="carouselSobre" class="carousel slide" data-bs-ride="carousel">
@@ -357,6 +361,45 @@
             <img src="resources/icons/892692.png" alt="Voltar ao topo" class="top-icon" loading="lazy">
         </button>
 
+
+        <!-- Botão para abrir o modal -->
+        <div class="review-container">
+            <button id="openReviewModal" class="btn-review">Deixe sua Avaliação</button>
+        </div>
+
+        <!-- Modal de Avaliação -->
+        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reviewModalLabel">Deixe sua Avaliação</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="reviewForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Seu Nome (Opcional)</label>
+                                <input type="text" id="name" class="form-control" placeholder="Ex: João da Silva">
+                            </div>
+                            <div class="mb-3">
+                                <label for="rating" class="form-label">Avaliação (1 a 5 Estrelas)</label>
+                                <input type="number" id="rating" class="form-control" min="1" max="5" placeholder="5">
+                            </div>
+                            <div class="mb-3">
+                                <label for="comment" class="form-label">Comentário</label>
+                                <textarea id="comment" class="form-control" rows="3"
+                                    placeholder="Escreva sua opinião..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="avaliacoes-container"></div>
+
+
         <footer class="footer">
             <div class="footer-container">
                 <!-- Seção de Links Rápidos -->
@@ -369,7 +412,7 @@
 
                 <!-- Informações de Contato -->
                 <div class="footer-contact">
-                    <!--<p>📧 contato@seudominio.com</p>-->
+                    📧 bass.danilo@gmail.com</p>
                     <p>📍 Ulianópolis - PA</p>
                 </div>
 
@@ -387,33 +430,19 @@
             </div>
         </footer>
 
+
+
+        <!-- Seus outros scripts -->
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/bootstrap.bundle.min.js" defer></script>
-        <script src="js/scripts.js"></script>
-        <script src="js/script-noticias.js"></script>
+        <script src="js/scripts.js" defer></script>
+        <script src="js/script-noticias.js" defer></script>
+        <script src="js/modal-avaliacoes.js"></script>
 
-        <!-- Firebase SDK -->
-        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+        <script type="module" src="js/firebase-config.js"></script>
 
-        <script>
-            // Sua configuração do Firebase
-            const firebaseConfig = {
-                apiKey: "AIzaSyBZMcTEACAF5aUh0ZtuO9YdWP_WbMD9_M0",
-                authDomain: "meu-site-76edf.firebaseapp.com",
-                projectId: "meu-site-76edf",
-                storageBucket: "meu-site-76edf.firebasestorage.app",
-                messagingSenderId: "496793480138",
-                appId: "1:496793480138:web:996241072c7804fc6afd33",
-                measurementId: "G-951PD672DG"
-            };
-
-            // Inicializa o Firebase
-            const app = firebase.initializeApp(firebaseConfig);
-            const database = firebase.database();
-        </script>
-
-
+        <script src="js/firebase-avaliacoes.js"></script>
+        <script src="js/mostrar-avaliacoes.js"></script>
 </body>
 
 </html>
