@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="fonts/bootstrap-icons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/modal-avaliacoes.css">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
@@ -351,6 +350,51 @@
             </div>
         </section>
 
+
+        <!-- Modal de Avaliações -->
+        <div class="modal fade" id="avaliacaoModal" tabindex="-1" aria-labelledby="avaliacaoModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="avaliacaoModalLabel">Deixe sua Avaliação</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="avaliacaoForm">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome (opcional)</label>
+                                <input type="text" class="form-control" id="nome"
+                                    placeholder="Seu nome ou deixe em branco">
+                            </div>
+                            <div class="mb-3">
+                                <label for="avaliacao" class="form-label">Sua Avaliação</label>
+                                <textarea class="form-control" id="avaliacao" rows="3" required
+                                    placeholder="Escreva sua opinião..."></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Nota</label>
+                                <select id="nota" class="form-select" required>
+                                    <option value="5" selected>⭐⭐⭐⭐⭐ (5 estrelas)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4 estrelas)</option>
+                                    <option value="3">⭐⭐⭐ (3 estrelas)</option>
+                                    <option value="2">⭐⭐ (2 estrelas)</option>
+                                    <option value="1">⭐ (1 estrela)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão para abrir o modal -->
+        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#avaliacaoModal">
+            Deixe sua Avaliação
+        </button>
+
+        
         <!-- Botão Flutuante do WhatsApp -->
         <a href="https://wa.me/+5591984645543?text=Preciso%20de%20informações." class="whatsapp-btn" target="_blank">
             <img src="resources/icons/220236.png" alt="WhatsApp" class="whatsapp-icon" loading="lazy">
@@ -360,45 +404,6 @@
         <button id="btn-topo" class="btn-topo" onclick="scrollToTop()">
             <img src="resources/icons/892692.png" alt="Voltar ao topo" class="top-icon" loading="lazy">
         </button>
-
-
-        <!-- Botão para abrir o modal -->
-        <div class="review-container">
-            <button id="openReviewModal" class="btn-review">Deixe sua Avaliação</button>
-        </div>
-
-        <!-- Modal de Avaliação -->
-        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="reviewModalLabel">Deixe sua Avaliação</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="reviewForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Seu Nome (Opcional)</label>
-                                <input type="text" id="name" class="form-control" placeholder="Ex: João da Silva">
-                            </div>
-                            <div class="mb-3">
-                                <label for="rating" class="form-label">Avaliação (1 a 5 Estrelas)</label>
-                                <input type="number" id="rating" class="form-control" min="1" max="5" placeholder="5">
-                            </div>
-                            <div class="mb-3">
-                                <label for="comment" class="form-label">Comentário</label>
-                                <textarea id="comment" class="form-control" rows="3"
-                                    placeholder="Escreva sua opinião..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="avaliacoes-container"></div>
-
 
         <footer class="footer">
             <div class="footer-container">
@@ -430,19 +435,16 @@
             </div>
         </footer>
 
-
-
-        <!-- Seus outros scripts -->
+        <!-- Meus outros scripts -->
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/bootstrap.bundle.min.js" defer></script>
         <script src="js/scripts.js" defer></script>
         <script src="js/script-noticias.js" defer></script>
-        <script src="js/modal-avaliacoes.js"></script>
 
-        <script type="module" src="js/firebase-config.js"></script>
 
-        <script src="js/firebase-avaliacoes.js"></script>
-        <script src="js/mostrar-avaliacoes.js"></script>
+        <!-- Importar o script de integração com o Firebase -->
+        <script src="js/avaliacoes.js"></script>
+
 </body>
 
 </html>
