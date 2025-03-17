@@ -110,13 +110,5 @@ gtag('consent', 'default', {
     'analytics_storage': 'denied'
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const elemento = document.getElementById("contador");
-    
-    if (elemento) {
-      elemento.innerText = "0";
-    } else {
-      console.error("Erro: Elemento #contador não encontrado.");
-    }
-  });
+ 
   
