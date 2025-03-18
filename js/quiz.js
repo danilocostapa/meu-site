@@ -1,112 +1,114 @@
-// Lista de perguntas completa (50 perguntas, já existente)
-const perguntas = [
-    { pergunta: "Qual é o maior planeta do sistema solar?", opcoes: ["Terra", "Marte", "Júpiter", "Saturno"], resposta: "Júpiter" },
-    { pergunta: "Quem foi o primeiro homem a pisar na Lua?", opcoes: ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong", "Michael Collins"], resposta: "Neil Armstrong" },
-    { pergunta: "Quantas Copas do Mundo a Seleção Brasileira de Futebol já venceu?", opcoes: ["3", "4", "5", "6"], resposta: "5" },
-    { pergunta: "Qual é o nome do vocalista da banda Queen?", opcoes: ["Mick Jagger", "Freddie Mercury", "Elton John", "David Bowie"], resposta: "Freddie Mercury" },
-    { pergunta: "Qual é o metal mais abundante na crosta terrestre?", opcoes: ["Ferro", "Cobre", "Alumínio", "Ouro"], resposta: "Alumínio" },
-    { pergunta: "Em que ano foi lançado o primeiro iPhone?", opcoes: ["2005", "2007", "2010", "2012"], resposta: "2007" },
-    { pergunta: "Qual destes filmes ganhou o Oscar de Melhor Filme em 1994?", opcoes: ["Titanic", "Forrest Gump", "Pulp Fiction", "O Rei Leão"], resposta: "Forrest Gump" },
-    { pergunta: "Qual é o maior oceano do mundo?", opcoes: ["Atlântico", "Índico", "Ártico", "Pacífico"], resposta: "Pacífico" },
-    { pergunta: "Quem escreveu a teoria da relatividade?", opcoes: ["Isaac Newton", "Albert Einstein", "Galileu Galilei", "Stephen Hawking"], resposta: "Albert Einstein" },
-    { pergunta: "Qual é o nome do protagonista da série Breaking Bad?", opcoes: ["Walter White", "Jesse Pinkman", "Saul Goodman", "Hank Schrader"], resposta: "Walter White" },
-    { pergunta: "Quantos ossos tem o corpo humano adulto?", opcoes: ["206", "210", "185", "198"], resposta: "206" },
-    { pergunta: "Qual país sediou a Copa do Mundo de 2018?", opcoes: ["Brasil", "Rússia", "França", "Alemanha"], resposta: "Rússia" },
-    { pergunta: "Qual animal é conhecido por sua habilidade de mudar de cor?", opcoes: ["Polvo", "Camaleão", "Arraia", "Lula"], resposta: "Camaleão" },
-    { pergunta: "Qual é o símbolo químico do ouro?", opcoes: ["Au", "Ag", "Hg", "Fe"], resposta: "Au" },
-    { pergunta: "Qual é o nome do maior deserto do mundo?", opcoes: ["Sahara", "Kalahari", "Atacama", "Gobi"], resposta: "Sahara" },
-    { pergunta: "Quem pintou a Mona Lisa?", opcoes: ["Leonardo da Vinci", "Pablo Picasso", "Michelangelo", "Van Gogh"], resposta: "Leonardo da Vinci" },
-    { pergunta: "Qual planeta é conhecido como Estrela D'Alva?", opcoes: ["Vênus", "Marte", "Mercúrio", "Netuno"], resposta: "Vênus" },
-    { pergunta: "Quem é o autor de 'Dom Quixote'?", opcoes: ["Machado de Assis", "William Shakespeare", "Miguel de Cervantes", "Eça de Queirós"], resposta: "Miguel de Cervantes" },
-    { pergunta: "Qual é a moeda oficial do Japão?", opcoes: ["Yuan", "Won", "Iene", "Rupia"], resposta: "Iene" },
-    { pergunta: "Em que ano o Titanic afundou?", opcoes: ["1910", "1912", "1914", "1920"], resposta: "1912" },
-    { pergunta: "Quantos lados tem um hexágono?", opcoes: ["4", "5", "6", "8"], resposta: "6" },
-    { pergunta: "Qual foi a primeira rede social a se tornar popular?", opcoes: ["Facebook", "Orkut", "MySpace", "Twitter"], resposta: "MySpace" },
-    { pergunta: "Quem descobriu o Brasil?", opcoes: ["Pedro Álvares Cabral", "Cristóvão Colombo", "Fernão de Magalhães", "Vasco da Gama"], resposta: "Pedro Álvares Cabral" },
-    { pergunta: "Qual país é conhecido como a Terra do Sol Nascente?", opcoes: ["China", "Coreia do Sul", "Japão", "Tailândia"], resposta: "Japão" },
-    { pergunta: "Quem inventou a lâmpada elétrica?", opcoes: ["Nikola Tesla", "Benjamin Franklin", "Thomas Edison", "Alexander Graham Bell"], resposta: "Thomas Edison" },
-    { pergunta: "Qual é o animal mais rápido do mundo?", opcoes: ["Guepardo", "Falcão-peregrino", "Leopardo", "Águia"], resposta: "Falcão-peregrino" },
-    { pergunta: "Qual é o nome do protagonista de 'O Senhor dos Anéis'?", opcoes: ["Frodo", "Gandalf", "Aragorn", "Sam"], resposta: "Frodo" },
-    { pergunta: "Quantas cores tem um arco-íris?", opcoes: ["5", "6", "7", "8"], resposta: "7" },
-    { pergunta: "Qual é o maior osso do corpo humano?", opcoes: ["Fêmur", "Tíbia", "Úmero", "Radio"], resposta: "Fêmur" },
-    { pergunta: "Qual país venceu a Copa do Mundo de 2014?", opcoes: ["Brasil", "Argentina", "Alemanha", "Espanha"], resposta: "Alemanha" },
-    { pergunta: "Qual é o nome do processo pelo qual as plantas produzem seu alimento?", opcoes: ["Respiração", "Fermentação", "Fotossíntese", "Germinação"], resposta: "Fotossíntese" },
-    { pergunta: "Quem escreveu 'O Pequeno Príncipe'?", opcoes: ["Antoine de Saint-Exupéry", "J.K. Rowling", "Machado de Assis", "Hans Christian Andersen"], resposta: "Antoine de Saint-Exupéry" },
-    { pergunta: "Qual é o maior mamífero do mundo?", opcoes: ["Elefante", "Baleia-azul", "Hipopótamo", "Rinoceronte"], resposta: "Baleia-azul" },
-    { pergunta: "Quem foi o primeiro presidente do Brasil?", opcoes: ["Dom Pedro II", "Getúlio Vargas", "Deodoro da Fonseca", "Juscelino Kubitschek"], resposta: "Deodoro da Fonseca" },
-    { pergunta: "Qual elemento químico é essencial para a respiração celular?", opcoes: ["Hidrogênio", "Oxigênio", "Nitrogênio", "Carbono"], resposta: "Oxigênio" },
-    { pergunta: "Qual a capital do Canadá?", opcoes: ["Toronto", "Montreal", "Ottawa", "Vancouver"], resposta: "Ottawa" },
-    { pergunta: "Quem descobriu a penicilina?", opcoes: ["Marie Curie", "Alexander Fleming", "Louis Pasteur", "Galileu Galilei"], resposta: "Alexander Fleming" },
-    { pergunta: "Quem fundou a Microsoft?", opcoes: ["Steve Jobs", "Mark Zuckerberg", "Elon Musk", "Bill Gates"], resposta: "Bill Gates" },
-    { pergunta: "Qual é a montanha mais alta do mundo?", opcoes: ["K2", "Everest", "Monte McKinley", "Kilimanjaro"], resposta: "Everest" }
+const questions = [
+   // { question: "Nova pergunta?", answers: ["Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4"], correct: Índice_da_resposta_correta }
+
+    { question: "Qual é o maior planeta do sistema solar?", answers: ["Terra", "Marte", "Júpiter", "Saturno"], correct: 2 },
+    { question: "Quem foi o primeiro homem a pisar na Lua?", answers: ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong", "Michael Collins"], correct: 2 },
+    { question: "Quantas Copas do Mundo a Seleção Brasileira de Futebol já venceu?", answers: ["3", "4", "5", "6"], correct: "5" },
+    { question: "Qual é o nome do vocalista da banda Queen?", answers: ["Mick Jagger", "Freddie Mercury", "Elton John", "David Bowie"], correct: 1 },
+    { question: "Qual é o metal mais abundante na crosta terrestre?", answers: ["Ferro", "Cobre", "Alumínio", "Ouro"], correct: 2 },
+    { question: "Em que ano foi lançado o primeiro iPhone?", answers: ["2005", "2007", "2010", "2012"], correct: 1 },
+    { question: "Qual destes filmes ganhou o Oscar de Melhor Filme em 1994?", answers: ["Titanic", "Forrest Gump", "Pulp Fiction", "O Rei Leão"], correct: 1 },
+    { question: "Qual é o maior oceano do mundo?", answers: ["Atlântico", "Índico", "Ártico", "Pacífico"], correct: 3 },
+    { question: "Quem escreveu a teoria da relatividade?", answers: ["Isaac Newton", "Albert Einstein", "Galileu Galilei", "Stephen Hawking"], correct: 1 },
+    { question: "Qual é o nome do protagonista da série Breaking Bad?", answers: ["Walter White", "Jesse Pinkman", "Saul Goodman", "Hank Schrader"], correct: 0},
+    { question: "Quantos ossos tem o corpo humano adulto?", answers: ["206", "210", "185", "198"], correct: 0 },
+    { question: "Qual país sediou a Copa do Mundo de 2018?", answers: ["Brasil", "Rússia", "França", "Alemanha"], correct: 1 },
+    { question: "Qual animal é conhecido por sua habilidade de mudar de cor?", answers: ["Polvo", "Camaleão", "Arraia", "Lula"], correct: 1 },
+    { question: "Qual é o símbolo químico do ouro?", answers: ["Au", "Ag", "Hg", "Fe"], correct: 0 },
+    { question: "Qual é o nome do maior deserto do mundo?", answers: ["Sahara", "Kalahari", "Atacama", "Gobi"], correct: 0 },
+    { question: "Quem pintou a Mona Lisa?", answers: ["Leonardo da Vinci", "Pablo Picasso", "Michelangelo", "Van Gogh"], correct: 0 },
+    { question: "Qual planeta é conhecido como Estrela D'Alva?", answers: ["Vênus", "Marte", "Mercúrio", "Netuno"], correct: 0 },
+    { question: "Quem é o autor de 'Dom Quixote'?", answers: ["Machado de Assis", "William Shakespeare", "Miguel de Cervantes", "Eça de Queirós"], correct: 2 },
+    { question: "Qual é a moeda oficial do Japão?", answers: ["Yuan", "Won", "Iene", "Rupia"], correct: 2 },
+    { question: "Em que ano o Titanic afundou?", answers: ["1910", "1912", "1914", "1920"], correct: 1 },
+    { question: "Quantos lados tem um hexágono?", answers: ["4", "5", "6", "8"], correct: 2 },
+    { question: "Qual foi a primeira rede social a se tornar popular?", answers: ["Facebook", "Orkut", "MySpace", "Twitter"], correct: 2 },
+    { question: "Quem descobriu o Brasil?", answers: ["Pedro Álvares Cabral", "Cristóvão Colombo", "Fernão de Magalhães", "Vasco da Gama"], correct: 0 },
+    { question: "Qual país é conhecido como a Terra do Sol Nascente?", answers: ["China", "Coreia do Sul", "Japão", "Tailândia"], correct: 2 },
+    { question: "Quem inventou a lâmpada elétrica?", answers: ["Nikola Tesla", "Benjamin Franklin", "Thomas Edison", "Alexander Graham Bell"], correct: 2 },
+    { question: "Qual é o animal mais rápido do mundo?", answers: ["Guepardo", "Falcão-peregrino", "Leopardo", "Águia"], correct: 1 },
+    { question: "Qual é o nome do protagonista de 'O Senhor dos Anéis'?", answers: ["Frodo", "Gandalf", "Aragorn", "Sam"], correct: 0 },
+    { question: "Quantas cores tem um arco-íris?", answers: ["5", "6", "7", "8"], correct: 2 },
+    { question: "Qual é o maior osso do corpo humano?", answers: ["Fêmur", "Tíbia", "Úmero", "Radio"], correct: 0 },
+    { question: "Qual país venceu a Copa do Mundo de 2014?", answers: ["Brasil", "Argentina", "Alemanha", "Espanha"], correct: 2 },
+    { question: "Qual é o nome do processo pelo qual as plantas produzem seu alimento?", answers: ["Respiração", "Fermentação", "Fotossíntese", "Germinação"], correct: 2 },
+    { question: "Quem escreveu 'O Pequeno Príncipe'?", answers: ["Antoine de Saint-Exupéry", "J.K. Rowling", "Machado de Assis", "Hans Christian Andersen"], correct: 0 },
+    { question: "Qual é o maior mamífero do mundo?", answers: ["Elefante", "Baleia-azul", "Hipopótamo", "Rinoceronte"], correct: 1 },
+    { question: "Quem foi o primeiro presidente do Brasil?", answers: ["Dom Pedro II", "Getúlio Vargas", "Deodoro da Fonseca", "Juscelino Kubitschek"], correct: 0 },
+    { question: "Qual elemento químico é essencial para a respiração celular?", answers: ["Hidrogênio", "Oxigênio", "Nitrogênio", "Carbono"], correct: 1 },
+    { question: "Qual a capital do Canadá?", answers: ["Toronto", "Montreal", "Ottawa", "Vancouver"], correct: 2 },
+    { question: "Quem descobriu a penicilina?", answers: ["Marie Curie", "Alexander Fleming", "Louis Pasteur", "Galileu Galilei"], correct: 1 },
+    { question: "Quem fundou a Microsoft?", answers: ["Steve Jobs", "Mark Zuckerberg", "Elon Musk", "Bill Gates"], correct: 3 },
+    { question: "Qual é a montanha mais alta do mundo?", answers: ["K2", "Everest", "Monte McKinley", "Kilimanjaro"], correct: 1 }
 ];
 
+let currentQuestionIndex = 0;
+let score = 0;
+let selectedQuestions = [];
 
-// Função para sortear 10 perguntas aleatórias
-function sortearPerguntas(perguntas, quantidade) {
-    let perguntasSorteadas = [];
-    let indicesUsados = new Set();
-
-    while (perguntasSorteadas.length < quantidade) {
-        let index = Math.floor(Math.random() * perguntas.length);
-        if (!indicesUsados.has(index)) {
-            perguntasSorteadas.push(perguntas[index]);
-            indicesUsados.add(index);
-        }
-    }
-    return perguntasSorteadas;
+// Função para gerar perguntas aleatórias
+function getRandomQuestions() {
+    selectedQuestions = [];
+    const shuffled = questions.sort(() => 0.5 - Math.random()); // Embaralha as perguntas
+    selectedQuestions = shuffled.slice(0, 10); // Seleciona 10 perguntas aleatórias
 }
 
-// Armazena as 10 perguntas para esta rodada
-let perguntasRodada = sortearPerguntas(perguntas, 10);
-let indiceAtual = 0;
-let pontuacao = 0;
-
-// Função para exibir a pergunta atual
-function exibirPergunta() {
-    if (indiceAtual < perguntasRodada.length) {
-        let perguntaAtual = perguntasRodada[indiceAtual];
-        document.getElementById("pergunta").innerText = perguntaAtual.pergunta;
-
-        let opcoesHtml = "";
-        perguntaAtual.opcoes.forEach(opcao => {
-            opcoesHtml += `<button onclick="verificarResposta('${opcao}')">${opcao}</button>`;
-        });
-
-        document.getElementById("opcoes").innerHTML = opcoesHtml;
-    } else {
-        exibirResultado();
-    }
-}
-
-// Função para verificar a resposta do usuário
-function verificarResposta(respostaEscolhida) {
-    let perguntaAtual = perguntasRodada[indiceAtual];
-
-    if (respostaEscolhida === perguntaAtual.resposta) {
-        pontuacao++;
-    }
-
-    indiceAtual++;
-    exibirPergunta();
-}
-
-// Exibe a pontuação final
-function exibirResultado() {
-    document.getElementById("quiz-container").innerHTML = `
-        <h2>Quiz Finalizado!</h2>
-        <p>Você acertou ${pontuacao} de 10 perguntas!</p>
-        <button onclick="reiniciarQuiz()">Tentar novamente</button>
+// Função para carregar a pergunta atual no modal
+function loadQuestion() {
+    const question = selectedQuestions[currentQuestionIndex];
+    const quizContent = document.getElementById('quizContent');
+    quizContent.innerHTML = `
+        <p><strong>${question.question}</strong></p>
+        ${question.answers.map((answer, index) => `
+            <div>
+                <input type="radio" name="answer" id="answer${index}" value="${index}">
+                <label for="answer${index}">${answer}</label>
+            </div>
+        `).join('')}
     `;
 }
 
-// Reinicia o quiz com novas perguntas
-function reiniciarQuiz() {
-    perguntasRodada = sortearPerguntas(perguntas, 10);
-    indiceAtual = 0;
-    pontuacao = 0;
-    exibirPergunta();
+// Função para mostrar a pontuação
+function showResults() {
+    let message = '';
+    const percentage = (score / selectedQuestions.length) * 100;
+    if (percentage >= 80) {
+        message = 'Parabéns! Você fez um ótimo trabalho!';
+    } else {
+        message = 'Você pode melhorar. Tente novamente!';
+    }
+
+    document.getElementById('quizContent').innerHTML = `
+        <p><strong>Você acertou ${score} de ${selectedQuestions.length} perguntas!</strong></p>
+        <p>${message}</p>
+    `;
+    document.getElementById('nextBtn').style.display = 'none'; // Esconde o botão "Próxima" no final
 }
 
-// Inicia o quiz
-exibirPergunta();
+// Função para verificar a resposta e passar para a próxima pergunta
+function checkAnswer() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (selectedAnswer) {
+        const answerIndex = parseInt(selectedAnswer.value);
+        const question = selectedQuestions[currentQuestionIndex];
+        if (answerIndex === question.correct) {
+            score++;
+        }
+        currentQuestionIndex++;
+        if (currentQuestionIndex < selectedQuestions.length) {
+            loadQuestion();
+        } else {
+            showResults();
+        }
+    }
+}
+
+// Inicializa o quiz
+document.getElementById('quizBtn').addEventListener('click', () => {
+    getRandomQuestions();
+    loadQuestion();
+    const quizModal = new bootstrap.Modal(document.getElementById('quizModal'));
+    quizModal.show();
+});
+
+document.getElementById('nextBtn').addEventListener('click', checkAnswer);

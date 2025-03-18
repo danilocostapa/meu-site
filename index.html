@@ -351,25 +351,27 @@
             </div>
         </section>
 
-        <!-- Botão flutuante para abrir o quiz -->
-        <button id="btnQuiz" class="btn-quiz-flutuante btn-flutuante quiz-btn" onclick="abrirQuiz()">🎮 Quiz</button>
+        <!-- Botão Flutuante -->
+        <button class="floating-btn" id="quizBtn">🎮</button>
 
-        <!-- Modal do Quiz -->
-        <div id="modalQuiz" class="quiz-modal">
-            <div class="quiz-modal-content">
-                <span class="quiz-close" onclick="fecharQuiz()">&times;</span>
-                <h2>Quiz Interativo</h2>
-                <div id="quizContainer">
-                    <p id="pergunta"></p>
-                    <div id="opcoes"></div>
-                    <button id="proximaPergunta" onclick="proximaPergunta()" style="display:none;">Próxima</button>
+        <!-- Modal -->
+        <div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="quizModalLabel">Quiz Interativo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body" id="quizContent">
+                        <!-- Perguntas serão injetadas aqui -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Próxima</button>
+                    </div>
                 </div>
-                <p id="resultado" style="display:none;"></p>
             </div>
         </div>
-
-
-
 
         <!-- Botão Flutuante do WhatsApp -->
         <a href="https://wa.me/+5591984645543?text=Preciso%20de%20informações." class="whatsapp-btn" target="_blank">
