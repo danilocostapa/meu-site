@@ -31,6 +31,7 @@
 
     <link rel="shortcut icon" href="resources/logo/2.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-quiz.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="fonts/bootstrap-icons.min.css" rel="stylesheet">
 
@@ -350,8 +351,26 @@
             </div>
         </section>
 
+        <!-- Botão flutuante para abrir o quiz -->
+        <button id="btnQuiz" class="btn-quiz-flutuante btn-flutuante quiz-btn" onclick="abrirQuiz()">🎮 Quiz</button>
 
-       
+        <!-- Modal do Quiz -->
+        <div id="modalQuiz" class="quiz-modal">
+            <div class="quiz-modal-content">
+                <span class="quiz-close" onclick="fecharQuiz()">&times;</span>
+                <h2>Quiz Interativo</h2>
+                <div id="quizContainer">
+                    <p id="pergunta"></p>
+                    <div id="opcoes"></div>
+                    <button id="proximaPergunta" onclick="proximaPergunta()" style="display:none;">Próxima</button>
+                </div>
+                <p id="resultado" style="display:none;"></p>
+            </div>
+        </div>
+
+
+
+
         <!-- Botão Flutuante do WhatsApp -->
         <a href="https://wa.me/+5591984645543?text=Preciso%20de%20informações." class="whatsapp-btn" target="_blank">
             <img src="resources/icons/220236.png" alt="WhatsApp" class="whatsapp-icon" loading="lazy">
@@ -397,10 +416,9 @@
         <script src="js/bootstrap.bundle.min.js" defer></script>
         <script src="js/scripts.js" defer></script>
         <script src="js/script-noticias.js" defer></script>
+        <script src="js/quiz.js" defer></script>
 
 
-        <!-- Importar o script de integração com o Firebase -->
-        <script src="js/avaliacoes.js"></script>
 
 </body>
 

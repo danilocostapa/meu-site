@@ -1,0 +1,114 @@
+/* Estilo do botão flutuante */
+.btn-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização do modal do quiz */
+.quiz-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px; /* Evita que fique muito largo */
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+}
+
+/* Botão de fechar (X) do modal */
+.quiz-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+}
+.quiz-close:hover {
+    color: red;
+}
+
+/* Estilização do botão flutuante do quiz */
+.quiz-btn {
+    position: fixed;
+    bottom: 80px; /* Ajustado para não sobrepor o WhatsApp */
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 999;
+    transition: 0.3s;
+}
+.quiz-btn:hover {
+    background: #0056b3;
+}
+
+
+/* Estilizando o modal */
+.quiz-modal-content {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px #0ff;
+}
+
+/* Botões de resposta */
+#opcoes button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: white;
+    background: #111;
+    border: 1px solid #0ff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#opcoes button:hover {
+    background: #0ff;
+    color: black;
+}
+
+/* Botão "Próxima" */
+#proximaPergunta {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background: #0ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#proximaPergunta:hover {
+    background: #00bcd4;
+}
+
