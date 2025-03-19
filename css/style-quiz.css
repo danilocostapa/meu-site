@@ -1,16 +1,105 @@
+/* Botão Flutuante */
 .floating-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px; /* Ajuste para não sobrepor o WhatsApp */
     right: 20px;
-    background-color: #007bff;
+    background-color: #00bcd4;
     color: white;
     border: none;
     border-radius: 50%;
-    padding: 15px;
-    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
     cursor: pointer;
+    box-shadow: 0 0 10px #00bcd4;
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 1050;
 }
 
+.floating-btn:hover {
+    transform: scale(1.1);
+    background-color: #008ba3;
+}
+
+/* Modal */
 .modal-content {
-    padding: 20px;
+    background-color: #111;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00bcd4;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho do Modal */
+.modal-header {
+    border-bottom: 1px solid #00bcd4;
+}
+
+.modal-title {
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+/* Corpo do Modal */
+.modal-body {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Perguntas do Quiz */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.quiz-options label {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border: 1px solid #00bcd4;
+    text-align: left;
+}
+
+.quiz-options input {
+    display: none; /* Esconde os botões de rádio padrão */
+}
+
+.quiz-options label:hover,
+.quiz-options input:checked + label {
+    background-color: #00bcd4;
+    color: black;
+}
+
+/* Rodapé do Modal */
+.modal-footer {
+    border-top: 1px solid #00bcd4;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Botões do Modal */
+.btn-secondary {
+    background-color: #555;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #777;
+}
+
+.btn-primary {
+    background-color: #00bcd4;
+    color: black;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #008ba3;
 }
