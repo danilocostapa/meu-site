@@ -196,3 +196,82 @@ document.getElementById('quizBtn').addEventListener('click', () => {
 });
 
 document.getElementById('nextBtn').addEventListener('click', checkAnswer);
+
+
+
+/* //CONFIGURAçÃO DO FIREBASE
+const firebaseConfig = {
+    apiKey: "AIzaSyCemA1gTI1EDuE1rafsLlyjrTS4RS_mIMk",
+    authDomain: "ranking-quiz.firebaseapp.com",
+    projectId: "ranking-quiz",
+    storageBucket: "ranking-quiz.firebasestorage.app",
+    messagingSenderId: "809470021974",
+    appId: "1:809470021974:web:a95938fd01b944c34706f7"
+};
+
+// Importa o Firestore do Firebase
+import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "firebase/firestore";
+
+// Inicializa o Firestore
+const db = getFirestore(app);
+
+// Função para salvar o resultado do jogador no ranking
+async function saveScore(playerName, score) {
+    try {
+        await addDoc(collection(db, "ranking"), {
+            name: playerName,
+            score: score,
+            timestamp: new Date()
+        });
+        console.log("Pontuação salva com sucesso!");
+    } catch (error) {
+        console.error("Erro ao salvar pontuação: ", error);
+    }
+}
+
+// Função para carregar e exibir o ranking
+async function loadRanking() {
+    const rankingList = document.getElementById("rankingList");
+    rankingList.innerHTML = "Carregando...";
+
+    try {
+        const q = query(collection(db, "ranking"), orderBy("score", "desc")); // Ordena do maior para o menor
+        const querySnapshot = await getDocs(q);
+
+        let rankingHTML = "<ol>";
+        querySnapshot.forEach((doc) => {
+            rankingHTML += `<li>${doc.data().name}: ${doc.data().score} pontos</li>`;
+        });
+        rankingHTML += "</ol>";
+
+        rankingList.innerHTML = rankingHTML;
+    } catch (error) {
+        console.error("Erro ao carregar ranking: ", error);
+        rankingList.innerHTML = "Erro ao carregar ranking.";
+    }
+}
+
+// Modificando a função de exibição de resultados para salvar no ranking
+function showResults() {
+    let playerName = prompt("Digite seu nome para salvar no ranking:");
+    if (!playerName) playerName = "Anônimo";
+
+    saveScore(playerName, score); // Salva a pontuação no Firebase
+
+    let message = '';
+    const percentage = (score / selectedQuestions.length) * 100;
+    if (percentage >= 80) {
+        message = 'Parabéns! Você fez um ótimo trabalho!';
+    } else {
+        message = 'Você pode melhorar. Tente novamente!';
+    }
+
+    document.getElementById('quizContent').innerHTML = `
+        <p><strong>Você acertou ${score} de ${selectedQuestions.length} perguntas!</strong></p>
+        <p>${message}</p>
+        <button onclick="loadRanking()">Ver Ranking</button>
+    `;
+
+    document.getElementById('nextBtn').style.display = 'none'; // Esconde o botão "Próxima" no final
+}
+ */
