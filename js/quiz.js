@@ -1,5 +1,5 @@
 const questions = [
-   // { question: "Nova pergunta?", answers: ["Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4"], correct: Índice_da_resposta_correta }
+    // { question: "Nova pergunta?", answers: ["Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4"], correct: Índice_da_resposta_correta }
 
     { question: "Qual é o maior planeta do sistema solar?", answers: ["Terra", "Marte", "Júpiter", "Saturno"], correct: 2 },
     { question: "Quem foi o primeiro homem a pisar na Lua?", answers: ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong", "Michael Collins"], correct: 2 },
@@ -10,7 +10,7 @@ const questions = [
     { question: "Qual destes filmes ganhou o Oscar de Melhor Filme em 1994?", answers: ["Titanic", "Forrest Gump", "Pulp Fiction", "O Rei Leão"], correct: 1 },
     { question: "Qual é o maior oceano do mundo?", answers: ["Atlântico", "Índico", "Ártico", "Pacífico"], correct: 3 },
     { question: "Quem escreveu a teoria da relatividade?", answers: ["Isaac Newton", "Albert Einstein", "Galileu Galilei", "Stephen Hawking"], correct: 1 },
-    { question: "Qual é o nome do protagonista da série Breaking Bad?", answers: ["Walter White", "Jesse Pinkman", "Saul Goodman", "Hank Schrader"], correct: 0},
+    { question: "Qual é o nome do protagonista da série Breaking Bad?", answers: ["Walter White", "Jesse Pinkman", "Saul Goodman", "Hank Schrader"], correct: 0 },
     { question: "Quantos ossos tem o corpo humano adulto?", answers: ["206", "210", "185", "198"], correct: 0 },
     { question: "Qual país sediou a Copa do Mundo de 2018?", answers: ["Brasil", "Rússia", "França", "Alemanha"], correct: 1 },
     { question: "Qual animal é conhecido por sua habilidade de mudar de cor?", answers: ["Polvo", "Camaleão", "Arraia", "Lula"], correct: 1 },
@@ -70,7 +70,22 @@ const questions = [
     { question: "Qual metal líquido é usado em termômetros tradicionais?", answers: ["Ferro", "Mercúrio", "Prata", "Zinco"], correct: 1 },
     { question: "Quantos planetas anões existem no sistema solar?", answers: ["3", "5", "7", "9"], correct: 1 },
     { question: "Em que ano a internet foi criada?", answers: ["1969", "1983", "1995", "2001"], correct: 0 },
-    { question: "Qual compositor é famoso por sua 'Nona Sinfonia'?", answers: ["Mozart", "Beethoven", "Bach", "Chopin"], correct: 1 }
+    { question: "Qual compositor é famoso por sua 'Nona Sinfonia'?", answers: ["Mozart", "Beethoven", "Bach", "Chopin"], correct: 1 },
+    { question: "Qual é a capital da Austrália?", answers: ["Sydney", "Melbourne", "Canberra", "Perth"], correct: 2 },
+    { question: "Quem pintou o teto da Capela Sistina?", answers: ["Leonardo da Vinci", "Michelangelo", "Raphael", "Donatello"], correct: 1 },
+    { question: "Qual o elemento químico mais leve?", answers: ["Oxigênio", "Hidrogênio", "Hélio", "Lítio"], correct: 1 },
+    { question: "Quem escreveu '1984'?", answers: ["George Orwell", "Aldous Huxley", "Ray Bradbury", "J.R.R. Tolkien"], correct: 0 },
+    { question: "Em que ano começou a Segunda Guerra Mundial?", answers: ["1914", "1939", "1945", "1923"], correct: 1 },
+    { question: "Qual foi o primeiro videogame da história?", answers: ["Atari 2600", "Pong", "Magnavox Odyssey", "Nintendo NES"], correct: 2 },
+    { question: "Qual é o maior país do mundo em extensão territorial?", answers: ["Canadá", "Estados Unidos", "China", "Rússia"], correct: 3 },
+    { question: "Quem descobriu a gravidade?", answers: ["Isaac Newton", "Albert Einstein", "Galileu Galilei", "Nikola Tesla"], correct: 0 },
+    { question: "Qual a montanha mais alta do Brasil?", answers: ["Pico da Neblina", "Pico Paraná", "Monte Roraima", "Pico do Itatiaia"], correct: 0 },
+    { question: "O que significa a sigla WWW?", answers: ["Web Wide World", "World Web Wide", "World Wide Web", "Wide World Web"], correct: 2 },
+    { question: "Quantos jogadores compõem um time de basquete em quadra?", answers: ["5", "6", "7", "8"], correct: 0 },
+    { question: "Qual é a moeda oficial do Reino Unido?", answers: ["Euro", "Dólar", "Libra esterlina", "Franco"], correct: 2 },
+    { question: "Quem foi o criador do Facebook?", answers: ["Bill Gates", "Steve Jobs", "Mark Zuckerberg", "Elon Musk"], correct: 2 },
+    { question: "Qual é o maior animal do mundo?", answers: ["Elefante africano", "Baleia-azul", "Tubarão-branco", "Girafa"], correct: 1 },
+    { question: "Quem foi o primeiro presidente dos Estados Unidos?", answers: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"], correct: 1 }
 ];
 
 let currentQuestionIndex = 0;
@@ -99,7 +114,7 @@ function loadQuestion() {
     `;
 }
 
-// Função para mostrar a pontuação
+// Função para mostrar a pontuação e pedir o nome do jogador
 function showResults() {
     let message = '';
     const percentage = (score / selectedQuestions.length) * 100;
@@ -112,6 +127,10 @@ function showResults() {
     document.getElementById('quizContent').innerHTML = `
         <p><strong>Você acertou ${score} de ${selectedQuestions.length} perguntas!</strong></p>
         <p>${message}</p>
+        <p>Digite seu nome para salvar no ranking:</p>
+        <input type="text" id="playerName" placeholder="Seu nome">
+        <button onclick="saveRanking()">Salvar Ranking</button>
+        <button onclick="showRanking()">Ver Ranking</button>
     `;
     document.getElementById('nextBtn').style.display = 'none'; // Esconde o botão "Próxima" no final
 }
@@ -132,6 +151,40 @@ function checkAnswer() {
             showResults();
         }
     }
+}
+
+// Função para salvar o ranking no localStorage
+function saveRanking() {
+    const playerName = document.getElementById('playerName').value.trim();
+    if (playerName === '') {
+        alert('Digite um nome antes de salvar!');
+        return;
+    }
+
+    let ranking = JSON.parse(localStorage.getItem('quizRanking')) || [];
+    ranking.push({ name: playerName, score: score });
+    ranking.sort((a, b) => b.score - a.score); // Ordena do maior para o menor
+
+    localStorage.setItem('quizRanking', JSON.stringify(ranking));
+    alert('Pontuação salva com sucesso!');
+    showRanking();
+}
+
+// Função para exibir o ranking
+function showRanking() {
+    let ranking = JSON.parse(localStorage.getItem('quizRanking')) || [];
+    if (ranking.length === 0) {
+        alert('Ainda não há rankings salvos!');
+        return;
+    }
+
+    let rankingContent = '<h3>Ranking</h3><ul>';
+    ranking.forEach((player, index) => {
+        rankingContent += `<li>${index + 1}. ${player.name} - ${player.score} pontos</li>`;
+    });
+    rankingContent += '</ul>';
+
+    document.getElementById('quizContent').innerHTML = rankingContent;
 }
 
 // Inicializa o quiz
