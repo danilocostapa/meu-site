@@ -368,6 +368,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         <button type="button" class="btn btn-primary" id="nextBtn">Próxima</button>
+                        <button id="salvarPontos" class="btn btn-success">Salvar Pontuação</button>
                     </div>
                 </div>
             </div>
@@ -421,6 +422,42 @@
         <script src="js/quiz.js" defer></script>
 
 
+
+        <script type="module">
+            // Importa o Firebase diretamente pelo CDN
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+            import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+            // CONFIGURAÇÃO DO SEU FIREBASE (cole aqui os dados copiados)
+            const firebaseConfig = {
+                apiKey: "AIzaSyBZbELls2Fa-4H2vkfSiSLg0N2zCVnbRRg",
+                authDomain: "rankingquiz-c6198.firebaseapp.com",
+                projectId: "rankingquiz-c6198",
+                storageBucket: "rankingquiz-c6198.firebasestorage.app",
+                messagingSenderId: "1087760068069",
+                appId: "1:1087760068069:web:64c7bf15d6a8ef620a530c"
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+
+            // Função para adicionar jogador ao ranking
+            async function adicionarJogador(nome, pontos) {
+                await addDoc(collection(db, "ranking"), { nome, pontos });
+                console.log("Jogador adicionado ao ranking!");
+            }
+
+            // Evento no botão para salvar a pontuação
+           document.getElementById("salvarPontos").addEventListener("click", function () {
+               let nome = prompt("Digite seu nome:");
+                let pontos = Math.floor(Math.random() * 100); // Simulando uma pontuação
+
+               if (nome) {
+                    adicionarJogador(nome, pontos);
+                    alert("Pontuação salva com sucesso!");
+                }
+            });
+        </script>
 
 </body>
 
