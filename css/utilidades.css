@@ -6,6 +6,7 @@ html {
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(180deg, #0a0f29, #000000);
     color: #ffffff;
 }
@@ -20,6 +21,7 @@ body {
 /* Título principal */
 
 h1 {
+    font-family: 'Orbitron', sans-serif;
     font-size: 28px;
     text-align: center;
     margin-bottom: 20px;
