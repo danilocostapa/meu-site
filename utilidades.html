@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Utilidades</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/utilidades.css">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">🛠 Central de Utilidades</h1>
+        <p class="text-center">Escolha uma das ferramentas abaixo:</p>
+
+        <!-- Botões para abrir os modais -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Conversor de Moedas</h5>
+                        <p class="card-text">Converta valores entre diferentes moedas.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalConversor">Acessar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Gerador de Senhas</h5>
+                        <p class="card-text">Crie senhas seguras aleatórias.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalSenha">Acessar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Calculadora</h5>
+                        <p class="card-text">Realize operações matemáticas simples.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalCalculadora">Acessar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para o Conversor de Moedas -->
+        <div class="modal fade" id="modalConversor" tabindex="-1" aria-labelledby="modalConversorLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background-color: #1e1e1e; color: #f8f9fa;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalConversorLabel">Conversor de Moedas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="valor" class="form-label">Valor em Reais</label>
+                            <input type="number" class="form-control" id="valorReais"
+                                placeholder="Digite o valor em Reais">
+                        </div>
+                        <div class="mb-3">
+                            <label for="moeda" class="form-label">Selecione a moeda</label>
+                            <select class="form-select" id="moeda">
+                                <option value="dolar">Dólar</option>
+                                <option value="euro">Euro</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="converter()">Converter</button>
+                        <p id="resultadoConversao" class="mt-3"></p>
+
+                        <!-- Mensagem de agradecimento -->
+                        <p id="mensagemAgradecimento" class="mt-3 text-success"
+                            style="font-weight: bold; display: none;">
+                            Obrigado por utilizar nossos serviços!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para o Gerador de Senha -->
+        <div class="modal fade" id="modalSenha" tabindex="-1" aria-labelledby="modalSenhaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background-color: #1e1e1e; color: #f8f9fa;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalSenhaLabel">Gerador de Senha</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Input para o tamanho da senha -->
+                        <label for="tamanhoSenha" class="form-label">Tamanho da Senha</label>
+                        <input type="number" id="tamanhoSenha" class="form-control mb-2" value="12" min="8" max="32">
+
+                        <!-- Opções de personalização da senha -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="usarLetrasMaiusculas" checked>
+                            <label class="form-check-label" for="usarLetrasMaiusculas">Incluir Letras Maiúsculas</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="usarLetrasMinusculas" checked>
+                            <label class="form-check-label" for="usarLetrasMinusculas">Incluir Letras Minúsculas</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="usarNumeros" checked>
+                            <label class="form-check-label" for="usarNumeros">Incluir Números</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="usarCaracteresEspeciais" checked>
+                            <label class="form-check-label" for="usarCaracteresEspeciais">Incluir Caracteres
+                                Especiais</label>
+                        </div>
+
+                        <!-- Botão para gerar senha -->
+                        <button class="btn btn-primary mb-2" onclick="gerarSenha()">Gerar Senha</button>
+
+                        <!-- Exibição da senha gerada -->
+                        <div class="mb-2">
+                            <label for="senhaGerada" class="form-label">Senha Gerada</label>
+                            <input type="text" id="senhaGerada" class="form-control" readonly>
+                        </div>
+
+                        <!-- Mensagem de agradecimento -->
+                        <p id="mensagemAgradecimento" class="mt-3 text-success"
+                            style="font-weight: bold; display: none;">
+                            Obrigado por utilizar nossos serviços!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal para a Calculadora -->
+        <div class="modal fade" id="modalCalculadora" tabindex="-1" aria-labelledby="modalCalculadoraLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background-color: #1e1e1e; color: #f8f9fa;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCalculadoraLabel">Calculadora</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Inputs para os números -->
+                        <input type="number" id="num1" placeholder="Número 1" class="form-control mb-2">
+                        <input type="number" id="num2" placeholder="Número 2" class="form-control mb-2">
+
+                        <!-- Select para escolher a operação -->
+                        <div class="mb-3">
+                            <label for="operacao" class="form-label">Escolha a operação</label>
+                            <select class="form-select" id="operacao">
+                                <option value="somar">Soma (+)</option>
+                                <option value="subtrair">Subtração (-)</option>
+                                <option value="multiplicar">Multiplicação (×)</option>
+                                <option value="dividir">Divisão (÷)</option>
+                                <option value="raiz">Raiz Quadrada (√)</option>
+                                <option value="mmc">MMC</option>
+                                <option value="mdc">MDC</option>
+                            </select>
+                        </div>
+
+                        <!-- Botão para calcular -->
+                        <button class="btn btn-primary" onclick="calcular()">Calcular</button>
+
+                        <!-- Resultado -->
+                        <p id="resultadoCalculadora" class="mt-3"></p>
+
+                        <!-- Mensagem de agradecimento -->
+                        <p id="mensagemAgradecimento" class="mt-3 text-success"
+                            style="font-weight: bold; display: none;">
+                            Obrigado por utilizar nossos serviços!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensagem sempre visível 
+        <div id="mensagemSempreVisivel" class="fixed-bottom bg-success text-white text-center p-3">
+            Obrigado por utilizar nossos serviços!
+        </div>-->
+
+
+        <!-- Mensagem de agradecimento -->
+        <div class="text-center mt-4" id="mensagemFinal" style="display: none;">
+            <h3>Obrigado por utilizar nossos serviços!</h3>
+        </div>
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Seção de Links Rápidos -->
+            <div class="footer-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+                <a href="https://wa.me/5591984645543" target="_blank">WhatsApp</a>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div class="footer-contact">
+                📧 bass.danilo@gmail.com</p>
+                <p>📍 Ulianópolis - PA</p>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@danilo_bassplayer" target="_blank">YouTube</a>
+                <a href="https://www.instagram.com/danilocosta_pa" target="_blank">Instagram</a>
+                <a href="https://facebook.com/danilo.costa.355744" target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com/in/danilo-costa-9b3789235/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/danilocostapa" target="_blank">GitHub</a>
+            </div>
+
+            <!-- Direitos Reservados -->
+            <p class="footer-copy">&copy; Desenvolvido por Danilo Costa - 2025 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js" defer>
+    </script>
+
+    <script src="js/utilidades.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+/* Estilização global para manter o padrão do site */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, #0a0f29, #000000);
+    color: #ffffff;
+}
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Título principal */
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FFF;
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #005f73;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+h1:hover {
+    color: #00f7ff;
+    text-shadow: 0 0 15px #00f7ff, 0 0 30px #00a8b5;
+    cursor: pointer;
+}
+
+
+/* Texto de introdução */
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #b0b0b0;
+}
+
+/* Estilização dos cards */
+.card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(13, 202, 240, 0.6);
+}
+
+/* Títulos dentro dos cards */
+.card-title {
+    font-size: 20px;
+    color: #0dcaf0;
+    /* Azul neon */
+}
+
+/* Texto dentro dos cards */
+.card-text {
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+/* Botões dentro dos cards */
+.card .btn {
+    background-color: #0dcaf0;
+    color: #121212;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #00bcd4;
+}
+
+/* Botão voltar */
+.btn-secondary {
+    background-color: #333;
+    border: none;
+    color: #f8f9fa;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #444;
+}
+
+/* Estilo do Rodapé */
+.footer {
+    background: linear-gradient(145deg, #000000, #0a0a0a);
+    color: #00ffff;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Container do Rodapé */
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Links do Rodapé */
+.footer-links a {
+    color: #00ffff;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff00ff;
+    /* Muda para magenta ao passar o mouse */
+}
+
+/* Contato */
+.footer-contact p {
+    margin: 5px 0;
+}
+
+/* Redes Sociais */
+.footer-social a {
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+    /* Animação de zoom ao passar o mouse */
+}
+
+/* Copyright */
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+#mensagemSempreVisivel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    font-weight: bold;
+}
