@@ -16,18 +16,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danilo Costa - Tecnologia e TI</title>
+
+    <!-- SEO Principal -->
     <meta name="author" content="Danilo Costa">
     <meta name="description"
-        content="Explore serviços de TI com Danilo Costa. Manutenção de computadores, redes, consultoria em tecnologia e desenvolvimento web em Ulianópolis - PA.">
-    <meta name="keywords" content="sites, web, desenvolvimento, Ulianópolis, pará, Danilo Costa">
-    <meta http-equiv="content-language" content="pt-br, en-US, fr" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="copyright" content="© 2025 DaniloCosta" />
+        content="Serviços de TI com Danilo Costa. Manutenção de computadores, redes, consultoria em tecnologia e desenvolvimento web em Ulianópolis - PA.">
+    <meta name="keywords"
+        content="tecnologia, TI, manutenção de computadores, redes, desenvolvimento web, Ulianópolis, Pará, Danilo Costa">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="content-language" content="pt-br">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="copyright" content="© 2025 Danilo Costa">
+
+    <!-- Open Graph (Para Redes Sociais - Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:title" content="Danilo Costa - Tecnologia e TI">
     <meta property="og:description" content="Especialista em TI, manutenção de computadores e desenvolvimento web.">
-    <meta property="og:image" content="resources/logo/2.png">
+    <meta property="og:image" content="https://danilocostapa.github.io/meu-site/resources/logo/2.png">
     <meta property="og:url" content="https://danilocostapa.github.io/meu-site/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Danilo Costa - Tecnologia e TI">
+    <meta name="twitter:description" content="Serviços de TI, manutenção de computadores e redes.">
+    <meta name="twitter:image" content="https://danilocostapa.github.io/meu-site/resources/logo/2.png">
+    <meta name="twitter:url" content="https://danilocostapa.github.io/meu-site/">
+
 
     <link rel="shortcut icon" href="resources/logo/2.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
@@ -450,11 +464,11 @@
             }
 
             // Evento no botão para salvar a pontuação
-           document.getElementById("salvarPontos").addEventListener("click", function () {
-               let nome = prompt("Digite seu nome:");
+            document.getElementById("salvarPontos").addEventListener("click", function () {
+                let nome = prompt("Digite seu nome:");
                 let pontos = Math.floor(Math.random() * 100); // Simulando uma pontuação
 
-               if (nome) {
+                if (nome) {
                     adicionarJogador(nome, pontos);
                     alert("Pontuação salva com sucesso!");
                 }
