@@ -10,6 +10,43 @@ body {
     /* Mantém o texto legível */
 }
 
+/* Estilização do Menu de Navegação */
+.navbar {
+    background: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    backdrop-filter: blur(8px); /* Efeito de vidro fosco */
+    border-bottom: 2px solid #00c3ff; /* Linha inferior neon */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* Cor do texto */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00c3ff; /* Cor neon ao passar o mouse */
+    transform: scale(1.1);
+}
+
+/* Submenu estilizado */
+.dropdown-menu {
+    background-color: #121212;
+    border: 1px solid #00c3ff;
+    box-shadow: 0px 4px 10px rgba(0, 195, 255, 0.5);
+}
+
+.dropdown-item {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: #00c3ff;
+    color: black;
+    font-weight: bold;
+}
+
+
 /*body {
     background: #121212; /* Cinza escuro 
     color: #ffffff;
@@ -257,16 +294,6 @@ h3 {
     /* Cor clara */
     color: #000;
     /* Texto escuro */
-}
-
-/* Tema Escuro (padrão) */
-body {
-    background-color: #0a0a0a;
-    /* Cor escura */
-    color: #fff;
-    /* Texto claro */
-    transition: background-color 0.5s, color 0.5s;
-    /* Animação suave */
 }
 
 /* Estilizando a seção de vídeos */

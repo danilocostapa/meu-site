@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/qrcode.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            background-color: #1e1e2f;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #2a2a3a;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #qrcode {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h2 class="mb-4 title-text">Gerador de QR Code</h2>
+        <input type="text" id="titulo" class="form-control mb-2" placeholder="Título (opcional)">
+        <select id="tipo" class="form-select mb-2" onchange="atualizarPlaceholder()">
+            <option value="url">URL</option>
+            <option value="wifi">Wi-Fi</option>
+            <option value="telefone">Telefone</option>
+            <option value="sms">SMS</option>
+            <option value="email">Email</option>
+            <option value="localizacao">Localização</option>
+        </select>
+        <input type="text" id="input" class="form-control mb-2" placeholder="Digite o valor...">
+        <input type="color" id="cor" class="form-control form-control-color mb-2" value="#000000">
+        <input type="file" id="imagem" class="form-control mb-2" accept="image/*">
+        <input type="text" id="descricao" class="form-control mb-2" placeholder="Descrição (opcional)">
+        <button class="btn btn-primary w-100" onclick="gerarQRCode()">Gerar QR Code</button>
+        <div id="qrcode" class="mt-4"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Seção de Links Rápidos -->
+            <div class="footer-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+                <a href="https://wa.me/5591984645543" target="_blank">WhatsApp</a>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div class="footer-contact">
+                📧 bass.danilo@gmail.com</p>
+                <p>📍 Ulianópolis - PA</p>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@danilo_bassplayer" target="_blank">YouTube</a>
+                <a href="https://www.instagram.com/danilocosta_pa" target="_blank">Instagram</a>
+                <a href="https://facebook.com/danilo.costa.355744" target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com/in/danilo-costa-9b3789235/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/danilocostapa" target="_blank">GitHub</a>
+            </div>
+
+            <!-- Direitos Reservados -->
+            <p class="footer-copy">&copy; Desenvolvido por Danilo Costa - 2025 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function atualizarPlaceholder() {
+            let tipo = document.getElementById("tipo").value;
+            let input = document.getElementById("input");
+            let placeholderText = "Digite o valor...";
+
+            switch (tipo) {
+                case "url":
+                    placeholderText = "Digite a URL completa...";
+                    break;
+                case "wifi":
+                    placeholderText = "Digite o nome da rede Wi-Fi...";
+                    break;
+                case "telefone":
+                    placeholderText = "Digite o número de telefone...";
+                    break;
+                case "sms":
+                    placeholderText = "Digite o número para SMS...";
+                    break;
+                case "email":
+                    placeholderText = "Digite o endereço de e-mail...";
+                    break;
+                case "localizacao":
+                    placeholderText = "Digite latitude,longitude...";
+                    break;
+            }
+            input.placeholder = placeholderText;
+        }
+
+        function gerarQRCode() {
+            let tipo = document.getElementById("tipo").value;
+            let input = document.getElementById("input").value.trim();
+            let cor = document.getElementById("cor").value;
+            let titulo = document.getElementById("titulo").value;
+            let descricao = document.getElementById("descricao").value;
+            let qrCodeDiv = document.getElementById("qrcode");
+            qrCodeDiv.innerHTML = "";
+
+            if (input === "") {
+                alert("Por favor, preencha o campo antes de gerar o QR Code.");
+                return;
+            }
+
+            let qrData = "";
+            switch (tipo) {
+                case "url":
+                    qrData = input;
+                    break;
+                case "wifi":
+                    qrData = `WIFI:T:WPA;S:${input};P:senha;;`;
+                    break;
+                case "telefone":
+                    qrData = `tel:${input}`;
+                    break;
+                case "sms":
+                    qrData = `sms:${input}`;
+                    break;
+                case "email":
+                    qrData = `mailto:${input}`;
+                    break;
+                case "localizacao":
+                    qrData = `geo:${input}`;
+                    break;
+                default:
+                    qrData = input;
+            }
+
+            let qrCode = new QRCode(qrCodeDiv, {
+                text: qrData,
+                width: 200,
+                height: 200,
+                colorDark: cor,
+                colorLight: "#ffffff"
+            });
+
+            if (titulo) {
+                let tituloElem = document.createElement("h3");
+                tituloElem.textContent = titulo;
+                qrCodeDiv.prepend(tituloElem);
+            }
+
+            if (descricao) {
+                let descElem = document.createElement("p");
+                descElem.textContent = descricao;
+                qrCodeDiv.appendChild(descElem);
+            }
+        }
+    </script>
+</body>
+
+</html>
