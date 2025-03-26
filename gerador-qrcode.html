@@ -10,19 +10,15 @@
     <script src="./js/qrcode.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <style>
-        body {
-            background-color: #1e1e2f;
-            color: #fff;
-            font-family: Arial, sans-serif;
-        }
-
         .container {
-            max-width: 500px;
-            margin: 50px auto;
+            max-width: auto;
+            margin: auto;
             padding: 20px;
             background: #2a2a3a;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(180deg, #0a0f29, #000000);
+            color: #ffffff;
         }
 
         #qrcode {
@@ -30,29 +26,62 @@
             padding: 10px;
             background: #fff;
             display: inline-block;
+            border: 5px solid #000;
+            position: relative;
+        }
+
+        .qr-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .btn-group {
+            margin-top: 10px;
+            padding: 20px;
         }
     </style>
 </head>
 
-<body>
-    <div class="container text-center">
-        <h2 class="mb-4 title-text">Gerador de QR Code</h2>
-        <input type="text" id="titulo" class="form-control mb-2" placeholder="Título (opcional)">
-        <select id="tipo" class="form-select mb-2" onchange="atualizarPlaceholder()">
-            <option value="url">URL</option>
-            <option value="wifi">Wi-Fi</option>
-            <option value="telefone">Telefone</option>
-            <option value="sms">SMS</option>
-            <option value="email">Email</option>
-            <option value="localizacao">Localização</option>
-        </select>
-        <input type="text" id="input" class="form-control mb-2" placeholder="Digite o valor...">
-        <input type="color" id="cor" class="form-control form-control-color mb-2" value="#000000">
-        <input type="file" id="imagem" class="form-control mb-2" accept="image/*">
-        <input type="text" id="descricao" class="form-control mb-2" placeholder="Descrição (opcional)">
-        <button class="btn btn-primary w-100" onclick="gerarQRCode()">Gerar QR Code</button>
-        <div id="qrcode" class="mt-4"></div>
+<body class="container text-center">
+    <h2 class="mb-4 title-text">Gerador de QR Code</h2>
+
+    <label for="tipo" class="form-label">Escolha o tipo de QR Code:</label>
+    <select id="tipo" class="form-select mb-2" onchange="atualizarPlaceholder()">
+        <option value="url">URL</option>
+        <option value="telefone">Telefone</option>
+        <option value="sms">SMS</option>
+        <option value="email">E-mail</option>
+        <option value="localizacao">Localização</option>
+        <option value="wifi">Wi-Fi</option>
+    </select>
+
+    <input type="text" id="input" class="form-control mb-2" placeholder="Digite o valor...">
+
+    <div id="senha-container" style="display: none;">
+        <input type="text" id="senha" class="form-control mb-2" placeholder="Senha da rede Wi-Fi">
     </div>
+
+    <label for="cor" class="form-label">Escolha a cor do QR Code:</label>
+    <input type="color" id="cor" class="form-control form-control-color mb-2" value="#000000">
+
+    <div class="btn-group">
+        <button class="btn btn-success" onclick="compartilharQRCode()">Compartilhar</button>
+        <button class="btn btn-secondary" onclick="imprimirQRCode()">Imprimir</button>
+        <button class="btn btn-primary" onclick="gerarQRCode()">Gerar QR Code</button>
+    </div>
+
+    <div class="mt-4" id="qrcode"></div>
 
     <footer class="footer">
         <div class="footer-container">
@@ -88,37 +117,23 @@
         function atualizarPlaceholder() {
             let tipo = document.getElementById("tipo").value;
             let input = document.getElementById("input");
-            let placeholderText = "Digite o valor...";
+            let senhaContainer = document.getElementById("senha-container");
 
-            switch (tipo) {
-                case "url":
-                    placeholderText = "Digite a URL completa...";
-                    break;
-                case "wifi":
-                    placeholderText = "Digite o nome da rede Wi-Fi...";
-                    break;
-                case "telefone":
-                    placeholderText = "Digite o número de telefone...";
-                    break;
-                case "sms":
-                    placeholderText = "Digite o número para SMS...";
-                    break;
-                case "email":
-                    placeholderText = "Digite o endereço de e-mail...";
-                    break;
-                case "localizacao":
-                    placeholderText = "Digite latitude,longitude...";
-                    break;
+            if (tipo === "wifi") {
+                input.placeholder = "Nome da rede (SSID)";
+                senhaContainer.style.display = "block"; // Mostra o campo de senha
+            } else {
+                input.placeholder = "Digite o valor...";
+                senhaContainer.style.display = "none"; // Oculta o campo de senha
             }
-            input.placeholder = placeholderText;
         }
 
         function gerarQRCode() {
             let tipo = document.getElementById("tipo").value;
             let input = document.getElementById("input").value.trim();
             let cor = document.getElementById("cor").value;
-            let titulo = document.getElementById("titulo").value;
-            let descricao = document.getElementById("descricao").value;
+            let senhaContainer = document.getElementById("senha-container");
+            let senha = senhaContainer.style.display === "block" ? document.getElementById("senha").value.trim() : "";
             let qrCodeDiv = document.getElementById("qrcode");
             qrCodeDiv.innerHTML = "";
 
@@ -128,48 +143,58 @@
             }
 
             let qrData = "";
-            switch (tipo) {
-                case "url":
-                    qrData = input;
-                    break;
-                case "wifi":
-                    qrData = `WIFI:T:WPA;S:${input};P:senha;;`;
-                    break;
-                case "telefone":
-                    qrData = `tel:${input}`;
-                    break;
-                case "sms":
-                    qrData = `sms:${input}`;
-                    break;
-                case "email":
-                    qrData = `mailto:${input}`;
-                    break;
-                case "localizacao":
-                    qrData = `geo:${input}`;
-                    break;
-                default:
-                    qrData = input;
+            if (tipo === "wifi") {
+                qrData = `WIFI:T:WPA;S:${input};P:${senha};;`;
+            } else {
+                switch (tipo) {
+                    case "url": qrData = input; break;
+                    case "telefone": qrData = `tel:${input}`; break;
+                    case "sms": qrData = `sms:${input}`; break;
+                    case "email": qrData = `mailto:${input}`; break;
+                    case "localizacao": qrData = `geo:${input}`; break;
+                }
             }
 
-            let qrCode = new QRCode(qrCodeDiv, {
+            new QRCode(qrCodeDiv, {
                 text: qrData,
                 width: 200,
                 height: 200,
                 colorDark: cor,
                 colorLight: "#ffffff"
             });
+        }
 
-            if (titulo) {
-                let tituloElem = document.createElement("h3");
-                tituloElem.textContent = titulo;
-                qrCodeDiv.prepend(tituloElem);
+        function compartilharQRCode() {
+            let qrCodeImg = document.querySelector("#qrcode img");
+            if (!qrCodeImg) {
+                alert("Gere um QR Code antes de compartilhar!");
+                return;
             }
 
-            if (descricao) {
-                let descElem = document.createElement("p");
-                descElem.textContent = descricao;
-                qrCodeDiv.appendChild(descElem);
+            let qrCodeURL = qrCodeImg.src;
+            let whatsappURL = `https://wa.me/?text=Confira%20este%20QR%20Code:%20${encodeURIComponent(qrCodeURL)}`;
+            let telegramURL = `https://t.me/share/url?url=${encodeURIComponent(qrCodeURL)}&text=Confira%20este%20QR%20Code!`;
+            let emailURL = `mailto:?subject=QR%20Code&body=Confira%20este%20QR%20Code:%20${encodeURIComponent(qrCodeURL)}`;
+
+            let shareOptions = `
+                <a href="${whatsappURL}" target="_blank" class="btn btn-success">WhatsApp</a>
+                <a href="${telegramURL}" target="_blank" class="btn btn-info">Telegram</a>
+                <a href="${emailURL}" target="_blank" class="btn btn-primary">Email</a>
+            `;
+            document.getElementById("qrcode").insertAdjacentHTML("beforeend", shareOptions);
+        }
+
+        function imprimirQRCode() {
+            let qrCodeImg = document.querySelector("#qrcode img");
+            if (!qrCodeImg) {
+                alert("Gere um QR Code antes de imprimir!");
+                return;
             }
+
+            let win = window.open("");
+            win.document.write(`<img src='${qrCodeImg.src}' width='300' height='300'>`);
+            win.print();
+            win.close();
         }
     </script>
 </body>
