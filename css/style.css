@@ -412,3 +412,56 @@ h3 {
     font-size: 0.9rem;
     opacity: 0.7;
 }
+.service-box {
+    padding: 15px;
+    text-align: center;
+    border-top: 4px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform: scale(0.95);
+}
+.service-icon {
+    font-size: 2.5rem;
+    color: #00bcd4; /* Ajuste conforme a paleta do site */
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+.service-box p {
+    transition: all 0.3s ease;
+}
+.service-box:hover {
+    border-top: 4px solid #008c9e; /* Cor ao passar o mouse */
+    background-color: rgba(0, 188, 212, 0.1); /* Fundo levemente alterado */
+    transform: scale(1.05);
+}
+.service-box:hover .service-icon {
+    color: #008c9e; /* Cor do ícone ao passar o mouse */
+}
+.service-box:hover p {
+    /*color: #008c9e; /* Cor do texto ao passar o mouse */
+   /* color: #00eaff; /* Escolha um tom mais claro */
+   color: #ffffff;
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
