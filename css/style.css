@@ -197,7 +197,7 @@ h3 {
 
 /* Estilização dos serviços */
 .service-box {
-    
+
     text-align: center;
     margin-bottom: 20px;
 }
@@ -379,7 +379,7 @@ h3 {
     color: #00ffff;
     text-align: center;
     padding: 2rem 0;
-   /* box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.5);*/
+    /* box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.5);*/
 }
 
 /* Container do Rodapé */
