@@ -2,8 +2,8 @@
 
 html {
     scroll-behavior: smooth;
-  }
-  
+}
+
 body {
     background: linear-gradient(180deg, #0a0f29, #000000);
     color: #ffffff;
@@ -12,19 +12,24 @@ body {
 
 /* Estilização do Menu de Navegação */
 .navbar {
-    background: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
-    backdrop-filter: blur(8px); /* Efeito de vidro fosco */
-    border-bottom: 2px solid #00c3ff; /* Linha inferior neon */
+    background: rgba(0, 0, 0, 0.8);
+    /* Fundo semi-transparente */
+    backdrop-filter: blur(8px);
+    /* Efeito de vidro fosco */
+    border-bottom: 2px solid #00c3ff;
+    /* Linha inferior neon */
 }
 
 .navbar-nav .nav-link {
-    color: #ffffff; /* Cor do texto */
+    color: #ffffff;
+    /* Cor do texto */
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #00c3ff; /* Cor neon ao passar o mouse */
+    color: #00c3ff;
+    /* Cor neon ao passar o mouse */
     transform: scale(1.1);
 }
 
@@ -192,6 +197,7 @@ h3 {
 
 /* Estilização dos serviços */
 .service-box {
+    
     text-align: center;
     margin-bottom: 20px;
 }
@@ -230,63 +236,67 @@ h3 {
 
 
 
+/* Seção de Contato */
 .contato-section {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9));
-    border: 2px solid #00ffff;
+    background: #121212;
+    /* Fundo escuro, diferente do restante da página */
     padding: 4rem 2rem;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #00ffff;
+    border-radius: 15px;
 }
 
+/* Título */
 .contato-section h2 {
-    color: #ffff;
+    color: #00ffff;
     font-size: 2.5rem;
-    text-shadow: 0 0 15px #00ffff;
+    text-shadow: 0 0 10px #00ffff;
 }
 
+/* Texto */
 .contato-section p {
     color: #ffffff;
     font-size: 1.2rem;
 }
 
-/* Estilização do botão WhatsApp */
+/* Botão WhatsApp */
 .btn-whatsapp {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 0.8rem 1.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #00ffff;
-    /* Cor do texto */
+    color: #fff;
+    background-color: #008f8f;
     text-decoration: none;
-    border: 2px solid #00ffff;
-    /* Borda neon */
     border-radius: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px #00ffff;
-    /* Efeito de brilho */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Efeito ao passar o mouse */
+.btn-whatsapp i {
+    font-size: 1.5rem;
+}
+
+/* Efeito no hover */
 .btn-whatsapp:hover {
-    background-color: #00ffff;
-    /* Fundo neon ao passar o mouse */
-    color: #000000;
-    /* Texto escuro */
-    box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff;
-    /* Brilho mais intenso */
+    background-color: #006666;
+    transform: scale(1.05);
 }
 
+/* Ícones de Redes Sociais */
 .social-icons a {
-    color: #00ffff;
-    font-size: 2rem;
-    margin: 0 10px;
+    color: #00bfbf;
+    /* Azul esverdeado para combinar com a paleta */
+    font-size: 1.8rem;
+    margin: 0 8px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+/* Animação ao passar o mouse */
 .social-icons a:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
     color: #ffffff;
 }
+
 
 /* Tema Claro */
 .light-theme {
@@ -307,20 +317,22 @@ h3 {
     border-radius: 12px;
 }
 
-/* Ajustando o tamanho do carrossel */
-#carrossel-videos .carousel-inner {
-    max-width: 800px;
-    margin: auto;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
-
-    #videos .ratio,
-    #carrossel-videos .ratio {
-        width: 100%;
+    #carrossel-videos .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 }
+
+@media (max-width: 576px) {
+    #carrossel-videos .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
 
 /* Seção de Música (Spotify) */
 #musica {
@@ -367,7 +379,7 @@ h3 {
     color: #00ffff;
     text-align: center;
     padding: 2rem 0;
-    box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.5);
+   /* box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.5);*/
 }
 
 /* Container do Rodapé */
@@ -412,6 +424,7 @@ h3 {
     font-size: 0.9rem;
     opacity: 0.7;
 }
+
 .service-box {
     padding: 15px;
     text-align: center;
@@ -421,27 +434,36 @@ h3 {
     cursor: pointer;
     transform: scale(0.95);
 }
+
 .service-icon {
     font-size: 2.5rem;
-    color: #00bcd4; /* Ajuste conforme a paleta do site */
+    color: #00bcd4;
+    /* Ajuste conforme a paleta do site */
     margin-bottom: 10px;
     transition: all 0.3s ease;
 }
+
 .service-box p {
     transition: all 0.3s ease;
 }
+
 .service-box:hover {
-    border-top: 4px solid #008c9e; /* Cor ao passar o mouse */
-    background-color: rgba(0, 188, 212, 0.1); /* Fundo levemente alterado */
+    border-top: 4px solid #008c9e;
+    /* Cor ao passar o mouse */
+    background-color: rgba(0, 188, 212, 0.1);
+    /* Fundo levemente alterado */
     transform: scale(1.05);
 }
+
 .service-box:hover .service-icon {
-    color: #008c9e; /* Cor do ícone ao passar o mouse */
+    color: #008c9e;
+    /* Cor do ícone ao passar o mouse */
 }
+
 .service-box:hover p {
     /*color: #008c9e; /* Cor do texto ao passar o mouse */
-   /* color: #00eaff; /* Escolha um tom mais claro */
-   color: #ffffff;
+    /* color: #00eaff; /* Escolha um tom mais claro */
+    color: #ffffff;
 }
 
 .animated-text {
