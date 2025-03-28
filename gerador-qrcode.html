@@ -50,13 +50,35 @@
             margin-top: 10px;
             padding: 20px;
         }
+
+        .animated-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animated-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 
 <body class="container text-center">
-    <h2 class="mb-4 title-text">Gerador de QR Code</h2>
+    <h2 class="mb-4 title-text animated-text">Gerador de QR Code</h2>
 
-    <label for="tipo" class="form-label">Escolha o tipo de QR Code:</label>
+    <label for="tipo" class="form-label slide-in">Escolha o tipo de QR Code:</label>
     <select id="tipo" class="form-select mb-2" onchange="atualizarPlaceholder()">
         <option value="url">URL</option>
         <option value="telefone">Telefone</option>
@@ -72,7 +94,7 @@
         <input type="text" id="senha" class="form-control mb-2" placeholder="Senha da rede Wi-Fi">
     </div>
 
-    <label for="cor" class="form-label">Escolha a cor do QR Code:</label>
+    <label for="cor" class="form-label slide-in">Escolha a cor do QR Code:</label>
     <input type="color" id="cor" class="form-control form-control-color mb-2" value="#000000">
 
     <div class="btn-group">
@@ -83,7 +105,7 @@
 
     <div class="mt-4" id="qrcode"></div>
 
-    <footer class="footer">
+    <footer class="footer slide-in">
         <div class="footer-container">
             <!-- Seção de Links Rápidos -->
             <div class="footer-links">
@@ -196,6 +218,38 @@
             win.print();
             win.close();
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".animated-text");
+
+            function checkScroll() {
+                elements.forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.85) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); // Verifica ao carregar a página
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".animated-text, .slide-in");
+
+            function checkScroll() {
+                elements.forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.85) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); // Verifica ao carregar a página
+        });
     </script>
 </body>
 

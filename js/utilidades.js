@@ -163,3 +163,36 @@ function mostrarMensagemAgradecimento() {
     }, 3000); // A mensagem some após 3 segundos
 }
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animated-text");
+
+    function checkScroll() {
+        elements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) {
+                el.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); // Verifica ao carregar a página
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animated-text, .slide-in");
+
+    function checkScroll() {
+        elements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) {
+                el.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); // Verifica ao carregar a página
+});
