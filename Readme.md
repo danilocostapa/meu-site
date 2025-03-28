@@ -1,16 +1,19 @@
 # 🚀 Meu Portfólio Profissional
 
-Bem-vindo ao repositório do meu site de portfólio! Aqui compartilho meus conhecimentos em tecnologia, desenvolvimento web e manutenção de computadores. Explore e conheça mais sobre meu trabalho.  
+Bem-vindo ao repositório do meu site de portfólio! Aqui compartilho meus conhecimentos em tecnologia, desenvolvimento web e manutenção de computadores. Explore e conheça mais sobre meu trabalho.
 
 ## 🌎 Acesse o site
 
-🔗 [Meu Portfólio](https://danilocostapa.github.io/meu-site/)  
+🔗 [Meu Portfólio](https://danilocostapa.github.io/meu-site/)
 
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **Frontend:** HTML5, CSS3, JavaScript, Bootstrap  
 - **Hospedagem:** GitHub Pages  
+
+---
 
 ## ⚡ Funcionalidades
 
@@ -18,6 +21,8 @@ Bem-vindo ao repositório do meu site de portfólio! Aqui compartilho meus conhe
 ✔️ Player de vídeos do YouTube e músicas do Spotify  
 ✔️ Layout responsivo e moderno  
 ✔️ Seção interativa para visitantes  
+
+---
 
 ## 🛠️ Como Rodar o Projeto
 
@@ -27,45 +32,51 @@ Bem-vindo ao repositório do meu site de portfólio! Aqui compartilho meus conhe
    ```
 2. Abra o arquivo `index.html` em seu navegador.
 
+---
+
 ## 📬 Contato
 
-📧 E-mail: (mailto:bass.danilo@email.com)  
-📌 LinkedIn: (https://www.linkedin.com/danilo-costa-9b3789235seu-perfil)  
-📹 YouTube: (https://youtube.com/@danilo_bassplayer)  
+📧 **E-mail:** [bass.danilo@email.com](mailto:bass.danilo@email.com)  
+📌 **LinkedIn:** [Danilo Costa](https://www.linkedin.com/in/danilo-costa-9b3789235/)  
+📹 **YouTube:** [Danilo BassPlayer](https://youtube.com/@danilo_bassplayer)  
 
 ---
 
-Curtiu? ⭐ Considere deixar um star no repositório!
-
-
-# 🟢 **Gerador de QR Code Personalizado**
-
-Um projeto simples e interativo para gerar **QR Codes personalizados** diretamente no navegador. Com ele, você pode criar QR Codes com diferentes cores, modelos e até adicionar texto ou ícones personalizados ao centro do código. Ideal para quem precisa gerar QR Codes rápidos e personalizados.
+Se gostou do projeto, deixe uma ⭐ no repositório!
 
 ---
 
-## 🚀 **Funcionalidades**
+# 🟢 Gerador de QR Code Personalizado
+
+Este é um projeto simples e interativo para gerar **QR Codes personalizados** diretamente no navegador. Com ele, você pode criar QR Codes com diferentes cores, modelos e até adicionar texto ou ícones personalizados ao centro do código.
+
+Ideal para quem precisa gerar QR Codes rápidos e personalizados de forma intuitiva.
+
+---
+
+## 🚀 Funcionalidades
 
 - **Gerar QR Code** a partir de qualquer texto ou link.
 - **Escolher modelo** do QR Code: padrão, arredondado ou pontilhado.
-- **Alterar cor** do QR Code para deixar mais estilizado.
+- **Alterar cor** do QR Code para personalização.
 - **Adicionar texto** abaixo do QR Code gerado.
 - **Inserir ícone** personalizado no centro do QR Code (opcional).
 - **Baixar o QR Code** gerado em formato de imagem.
 
 ---
 
-## 🌐 **Tecnologias Utilizadas**
+## 🌐 Tecnologias Utilizadas
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Framework**: Bootstrap para layout responsivo.
-- **API**: Google Charts para geração do QR Code.
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Framework:** Bootstrap para layout responsivo
+- **API:** Google Charts para geração do QR Code
 
 ---
 
-## 📦 **Instalação**
+## 📦 Instalação
 
-1. **Clone o repositório**:
+1. **Clone o repositório:**
    ```bash
    git clone https://github.com/danilocostapa/gerador-qr-code.git
+   ```
 
