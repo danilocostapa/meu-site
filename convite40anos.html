@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite 40 Anos - Anos 90</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../resources/css/style.css">-->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            color: #222;
+            text-align: center;
+        }
+
+        header {
+            background: #000;
+            color: #fff;
+            padding: 2rem 1rem;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .section {
+            padding: 2rem;
+        }
+
+        .info {
+            background-color: #fff;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 1rem auto;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 1rem;
+            padding: 1rem 2rem;
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4500;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        iframe {
+            border: none;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Convite dos 40 anos do Danilo</h1>
+        <p>Venha curtir uma viagem aos anos 90!</p>
+    </header>
+
+    <section class="section">
+        <div class="info">
+            <h2>🎉 Informações do Evento</h2>
+            <p><strong>📍 Local:</strong> A definir</p>
+            <p><strong>🗓️ Data:</strong> 08 de Agosto de 2025</p>
+            <p><strong>⏰ Hora:</strong> A partir das 19h00</p>
+            <p><strong>🎭 Tema:</strong> Festa Anos 90! Vá à caráter!</p>
+        </div>
+
+        <div class="info">
+            <h2>⏳ Contagem Regressiva</h2>
+            <p class="countdown" id="timer">Carregando...</p>
+        </div>
+
+        <div class="info">
+            <h2>📱 Confirme sua presença</h2>
+            <a class="btn"
+                href="https://wa.me/5591984645543?text=Confirmo%20minha%20presen%C3%A7a%20no%20seu%20anivers%C3%A1rio!"
+                target="_blank">Confirmar no WhatsApp</a>
+        </div>
+
+        <div class="info">
+            <h2>🎶 Já entre no clima</h2>
+
+            <p><strong>🔥 Eurodance</strong></p>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXdGDdHXKDlqT"
+                width="100%" height="152" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+
+            <p><strong>🎸 Rock Anos 80/90</strong></p>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZBCPUIUs2iR"
+                width="100%" height="152" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+
+            <p><strong>🕺 Michael Jackson & Clássicos</strong></p>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3VBzoB8bEyxWyKZskAUVIs"
+                width="100%" height="152" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+
+            <p><strong>🧨 Mix Anos 80 & 90 Hits</strong></p>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4UtSsGT1Sbe"
+                width="100%" height="152" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Vai ser épico, não fique de fora! 💾</p>
+    </footer>
+
+    <!--<script src="../resources/js/script.js"></script>-->
+
+    <script>
+        // Contador Regressivo
+        const timer = document.getElementById('timer');
+        const festa = new Date("August 08, 2025 19:00:00").getTime();
+
+        const interval = setInterval(() => {
+            const agora = new Date().getTime();
+            const diff = festa - agora;
+
+            if (diff <= 0) {
+                clearInterval(interval);
+                timer.innerHTML = "É hoje! 🎉";
+            } else {
+                const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+                timer.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
